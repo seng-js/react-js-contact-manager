@@ -1,43 +1,275 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+<html>
+<head>
+	<title>Dashboard</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="container">
+		<nav class="side-bar">
+			<div class="user-p">
+				<img src="img/img6.jpeg">
+				<h4>JOHN DOE</h4>
+				<h6>SunScript, CEO</h6>
+			</div>
+			<ul>
+				<li>
+					<a href="#">
+						<i class="fa fa-home" aria-hidden="true"></i>
+						<span>Home</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<i class="fa fa-address-book" aria-hidden="true"></i>
+						<span>Contacts</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<i class="fa fa-heart" aria-hidden="true"></i>
+						<span>Favorites</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<i class="fa fa-user" aria-hidden="true"></i>
+						<span>People</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<i class="fa fa-users" aria-hidden="true"></i>
+						<span>Companies</span>
+					</a>
+				</li>
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+				<li>
+					<a href="#">
+						<i class="fa fa-cog" aria-hidden="true"></i>
+						<span>Setting</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<i class="fa fa-sign-out" aria-hidden="true"></i>
+						<span>Logout</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
+		<div class="container-section">
+			<div class="row">
+				<div>
+					<input type="text" id="search" placeholder="Search...">
+				</div>
+				<div>
+					<a class="nav-link nav-profile" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+						<img src="img/img6.jpeg" alt="Profile" class="rounded-circle">
+						<span class="login-name">John Doe</span>
+					</a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="filter-option">
+				<ul>
+					<li><h1 class="filter-label">People</h1></li>
+					<li><a href="#"><img src="img/grid-view-active.png"></a></li>
+					<li><a href="#"><img src="img/list-view-inactive.png"></a></li>
+				</ul>
+				</div>
+				<div>
+					<select id="location" class="location">
+						<option>Ukraine, Lviv</option>
+						<option>Cambodia, Phnom Penh</option>
+					</select>
+				</div>
+			</div>
+			<section class="section-1">
+				<div class="main-card">
+					<div class="cards">
+						<div class="card">
+							<div class="content">
+								<div class="img">
+									<img src="img/img1.jpg" alt="">
+								</div>
+								<div class="details">
+									<div class="name">Andrew Neil</div>
+									<div class="job">Web Designer</div>
+								</div>
+								<div class="media-icons">
+									<a href="#"><i class="fa fa-facebook-f"></i></a>
+									<a href="#"><i class="fa fa-twitter"></i></a>
+									<a href="#"><i class="fa fa-instagram"></i></a>
+									<a href="#"><i class="fa fa-youtube"></i></a>
+								</div>
+								<div class="details">
+									<div class="job">Ukraine, Lviv</div>
+								</div>
+								<button class="btn btn-danger">Delete from contacts</button>
+								<button class="btn btn-danger">Delete from favorites</button>
+							</div>
+						</div>
+						<div class="card">
+							<div class="content">
+								<div class="img">
+									<img src="img/img2.jpg" alt="">
+								</div>
+								<div class="details">
+									<div class="name">Jasmine Carter</div>
+									<div class="job">UI Designer</div>
+								</div>
+								<div class="media-icons">
+									<a href="#"><i class="fa fa-facebook-f"></i></a>
+									<a href="#"><i class="fa fa-twitter"></i></a>
+									<a href="#"><i class="fa fa-instagram"></i></a>
+									<a href="#"><i class="fa fa-youtube"></i></a>
+								</div>
+								<div class="details">
+									<div class="job">Ukraine, Lviv</div>
+								</div>
+								<button class="btn btn-success">Add to contacts</button>
+								<button class="btn btn-danger">Delete from favorites</button>
+							</div>
+						</div>
+						<div class="card">
+							<div class="content">
+								<div class="img">
+									<img src="img/img3.jpg" alt="">
+								</div>
+								<div class="details">
+									<div class="name">Justin Chung</div>
+									<div class="job">Web Devloper</div>
+								</div>
+								<div class="media-icons">
+									<a href="#"><i class="fa fa-facebook-f"></i></a>
+									<a href="#"><i class="fa fa-twitter"></i></a>
+									<a href="#"><i class="fa fa-instagram"></i></a>
+									<a href="#"><i class="fa fa-youtube"></i></a>
+								</div>
+								<div class="details">
+									<div class="job">Ukraine, Lviv</div>
+								</div>
+								<button class="btn btn-success">Add to contacts</button>
+								<button class="btn btn-danger">Delete from favorites</button>
+							</div>
+						</div>
+						<div class="card">
+							<div class="content">
+								<div class="img">
+									<img src="img/img4.jpg" alt="">
+								</div>
+								<div class="details">
+									<div class="name">Appolo Reef</div>
+									<div class="job">Web Designer</div>
+								</div>
+								<div class="media-icons">
+									<a href="#"><i class="fa fa-facebook-f"></i></a>
+									<a href="#"><i class="fa fa-twitter"></i></a>
+									<a href="#"><i class="fa fa-instagram"></i></a>
+									<a href="#"><i class="fa fa-youtube"></i></a>
+								</div>
+								<div class="details">
+									<div class="job">Ukraine, Lviv</div>
+								</div>
+								<button class="btn btn-success">Add to contacts</button>
+								<button class="btn btn-danger">Delete from favorites</button>
+							</div>
+						</div>
+						<div class="card">
+							<div class="content">
+								<div class="img">
+									<img src="img/img5.jpg" alt="">
+								</div>
+								<div class="details">
+									<div class="name">Adrina Calvo</div>
+									<div class="job">UI Designer</div>
+								</div>
+								<div class="media-icons">
+									<a href="#"><i class="fa fa-facebook-f"></i></a>
+									<a href="#"><i class="fa fa-twitter"></i></a>
+									<a href="#"><i class="fa fa-instagram"></i></a>
+									<a href="#"><i class="fa fa-youtube"></i></a>
+								</div>
+								<div class="details">
+									<div class="job">Ukraine, Lviv</div>
+								</div>
+								<button class="btn btn-success">Add to contacts</button>
+								<button class="btn btn-danger">Delete from favorites</button>
+							</div>
+						</div>
+						<div class="card">
+							<div class="content">
+								<div class="img">
+									<img src="img/img6.jpeg" alt="">
+								</div>
+								<div class="details">
+									<div class="name">Nicole Lewis</div>
+									<div class="job">Web Devloper</div>
+								</div>
+								<div class="media-icons">
+									<a href="#"><i class="fa fa-facebook-f"></i></a>
+									<a href="#"><i class="fa fa-twitter"></i></a>
+									<a href="#"><i class="fa fa-instagram"></i></a>
+									<a href="#"><i class="fa fa-youtube"></i></a>
+								</div>
+								<div class="details">
+									<div class="job">Ukraine, Lviv</div>
+								</div>
+								<button class="btn btn-success">Add to contacts</button>
+								<button class="btn btn-danger">Delete from favorites</button>
+							</div>
+						</div>
+						<div class="card">
+							<div class="content">
+								<div class="img">
+									<img src="img/img5.jpg" alt="">
+								</div>
+								<div class="details">
+									<div class="name">Adrina Calvo</div>
+									<div class="job">UI Designer</div>
+								</div>
+								<div class="media-icons">
+									<a href="#"><i class="fa fa-facebook-f"></i></a>
+									<a href="#"><i class="fa fa-twitter"></i></a>
+									<a href="#"><i class="fa fa-instagram"></i></a>
+									<a href="#"><i class="fa fa-youtube"></i></a>
+								</div>
+								<div class="details">
+									<div class="job">Ukraine, Lviv</div>
+								</div>
+								<button class="btn btn-success">Add to contacts</button>
+								<button class="btn btn-danger">Delete from favorites</button>
+							</div>
+						</div>
+						<div class="card">
+							<div class="content">
+								<div class="img">
+									<img src="img/img6.jpeg" alt="">
+								</div>
+								<div class="details">
+									<div class="name">Nicole Lewis</div>
+									<div class="job">Web Devloper</div>
+								</div>
+								<div class="media-icons">
+									<a href="#"><i class="fa fa-facebook-f"></i></a>
+									<a href="#"><i class="fa fa-twitter"></i></a>
+									<a href="#"><i class="fa fa-instagram"></i></a>
+									<a href="#"><i class="fa fa-youtube"></i></a>
+								</div>
+								<div class="details">
+									<div class="job">Ukraine, Lviv</div>
+								</div>
+								<button class="btn btn-success">Add to contacts</button>
+								<button class="btn btn-danger">Delete from favorites</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+</body>
 </html>
