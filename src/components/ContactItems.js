@@ -3,9 +3,14 @@ import './SideBar.css';
 import {Link} from "react-router-dom";
 
 const ContactItems = (props) => {
-    const items = props.data.map( item => {
+    
+    const handleUpdateData = (type, action, id) => {
+        props.handleUpdateData(type, action, id);
+    }
+    
+    const items = props.data?.map( (item, key) => {
         return (
-                <div className="card">
+                <div className="card" key={key}>
                     <div className="content">
                         <div className="img">
                             <img src={item.avatar} alt={item.avatar} />
@@ -32,20 +37,21 @@ const ContactItems = (props) => {
                             <div className="job">{ item.city}</div>
                         </div>
                         {item.isContact ? (
-                            <button className="btn btn-danger">Delete from contacts</button>
+                            <button onClick={() => handleUpdateData('contact', 'delete', item.id)} className="btn btn-danger">Delete from contacts</button>
                         ):(
-                            <button className="btn btn-success">Add to contacts</button>
+                            <button onClick={() => handleUpdateData('contact', 'add', item.id)} className="btn btn-success">Add to contacts</button>
                             )}
-                        {item.isContact && item.isFavourite ? (
-                            <button className="btn btn-danger">Delete from favorites</button>
+                        {item.isFavourite ? (
+                            <button onClick={() => handleUpdateData('favorite', 'delete', item.id)} className="btn btn-danger">Delete from favorites</button>
                         ):(
-                            <button className="btn btn-success">Add to favorites</button>
+                            <button onClick={() => handleUpdateData('favorite', 'add', item.id)} className="btn btn-success">Add to favorites</button>
                         )}
                     </div>
                 </div>
             )
         }
     );
+
     return (
         <>
             <section className="section-1">

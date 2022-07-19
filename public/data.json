@@ -12,8 +12,8 @@
     },
     "company":"Logical",
     "position":"Web Designer",
-    "isFavourite":false,
-    "isContact":false
+    "isFavourite":true,
+    "isContact":true
   },
   {
     "id":2,
@@ -28,7 +28,7 @@
     },
     "company":"Logical",
     "position":"UI Designer",
-    "isFavourite":false,
+    "isFavourite":true,
     "isContact":false
   },
   {
@@ -44,7 +44,7 @@
     },
     "company":"HandyCode",
     "position":"UI Designer",
-    "isFavourite":false,
+    "isFavourite":true,
     "isContact":false
   },
   {
@@ -60,7 +60,7 @@
     },
     "company":"PerfectCode",
     "position":"Web Designer",
-    "isFavourite":false,
+    "isFavourite":true,
     "isContact":false
   },
   {
@@ -77,7 +77,7 @@
     "company":"PerfectCode",
     "position":"UI Designer",
     "isFavourite":false,
-    "isContact":false
+    "isContact":true
   },
   {
     "id":6,
@@ -93,7 +93,7 @@
     "company":"Logical",
     "position":"Web Designer",
     "isFavourite":false,
-    "isContact":false
+    "isContact":true
   },
   {
     "id":7,
@@ -109,7 +109,7 @@
     "company":"Logical",
     "position":"UI Designer",
     "isFavourite":false,
-    "isContact":false
+    "isContact":true
   },
   {
     "id":8,

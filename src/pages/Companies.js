@@ -1,18 +1,31 @@
-import React from 'react';
 import SideBar from "../components/SideBar";
 import SideHeader from "../components/SideHeader";
 import ContactItems from "../components/ContactItems";
-import {getContactStorage} from "../util";
+import {FIREBASE_URL_PEOPLE_JSON} from "../util";
+import {useEffect, useState} from "react";
+import axios from "axios";
 
-const Companies = () => {
-    const data = getContactStorage();
+const Companies = (props) => {
+    const [data, setData] = useState([]);
+    const fetchData = () => {
+        return axios.get(FIREBASE_URL_PEOPLE_JSON)
+            .then((response) => setData(response.data));}
+
+    useEffect(() => {
+        fetchData();
+    }, [data]);
+
+    const handleUpdateData = (type, action, id) => {
+        props.handleUpdateData(type, action, id);
+    }
+
     return (
         <div>
             <div className="container">
                 <SideBar />
                 <div className="container-section">
                     <SideHeader title="Companies" />
-                    <ContactItems data={data} />
+                    <ContactItems handleUpdateData={handleUpdateData} data={data} />
                 </div>
             </div>
         </div>

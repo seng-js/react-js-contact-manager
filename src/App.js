@@ -7,19 +7,24 @@ import Contacts from "./pages/Contacts";
 import Companies from "./pages/Companies";
 
 function App() {
-  return (
+    
+    const handleUpdateData = (type, action, id) => {
+        console.log(type, action, id);
+    }
+    
+    return (
       <>
           <BrowserRouter>
               <Routes>
                   <Route path="/" element={<Home />} />
-                  <Route path="/contacts" element={<Contacts />} />
-                  <Route path="/favorites" element={<Favorites />} />
-                  <Route path="/people" element={<People />} />
-                  <Route path="/companies" element={<Companies />} />
+                  <Route path="/contacts" element={<Contacts handleUpdateData={handleUpdateData} />} />
+                  <Route path="/favorites" element={<Favorites handleUpdateData={handleUpdateData} />} />
+                  <Route path="/people" element={<People handleUpdateData={handleUpdateData} />} />
+                  <Route path="/companies" element={<Companies handleUpdateData={handleUpdateData} />} />
               </Routes>
           </BrowserRouter>
       </>
-  );
+    );
 }
 
 export default App;
