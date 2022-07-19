@@ -1,8 +1,13 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import {NavLink, useLocation} from "react-router-dom";
 import './SideBar.css';
+import {getProfile} from "../util";
 
 const SideBar = () => {
+
+    const location = useLocation();
+    const { pathname } = location;
+    const profile = getProfile();
 
     const menuItems = [
         {
@@ -32,18 +37,20 @@ const SideBar = () => {
         }
     ];
 
-    const listItem = menuItems.map((menu, key) => <li><NavLink key={key} to={menu.link}><i className={menu.icon} aria-hidden="true"></i><span>{menu.name}</span></NavLink></li>);
+    const renderMenuItems= menuItems.map((menu, key) => <li className={pathname === menu.link ? "active" : ""}>
+        <NavLink key={key} to={menu.link}><i className={menu.icon} aria-hidden="true"></i><span>{menu.name}</span></NavLink>
+    </li>);
 
     return (
         <>
             <nav className="side-bar">
                 <div className="user-p">
-                    <img alt="JOHN DOE" src="img/img6.jpeg" />
-                        <h4>JOHN DOE</h4>
-                        <h6>SunScript, CEO</h6>
+                    <img alt="JOHN DOE" src={profile.avatar} />
+                        <h4>{profile.name}</h4>
+                        <h6>{profile.company}, {profile.position}</h6>
                 </div>
                 <ul>
-                    {listItem}
+                    {renderMenuItems}
                 </ul>
             </nav>
         </>

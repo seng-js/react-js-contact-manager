@@ -6,14 +6,13 @@ const getContactStorage = () => {
             "city":"Ukraine, Lviv",
             "avatar":"img/img1.jpg",
             "social_networks":{
-                "facebook":"https://www.facebook.com/test",
                 "twitter":"#",
                 "instagram":"#",
                 "youtube":"#"
             },
             "company":"Logical",
             "position":"Web Designer",
-            "isFavourite":false,
+            "isFavourite":true,
             "isContact":false
         },
         {
@@ -24,13 +23,12 @@ const getContactStorage = () => {
             "social_networks":{
                 "facebook":"#",
                 "twitter":"#",
-                "instagram":"#",
                 "youtube":"#"
             },
             "company":"Logical",
             "position":"UI Designer",
             "isFavourite":false,
-            "isContact":false
+            "isContact":true
         },
         {
             "id":3,
@@ -41,7 +39,6 @@ const getContactStorage = () => {
                 "facebook":"#",
                 "twitter":"#",
                 "instagram":"#",
-                "youtube":"#"
             },
             "company":"HandyCode",
             "position":"UI Designer",
@@ -55,8 +52,6 @@ const getContactStorage = () => {
             "avatar":"img/img5.jpg",
             "social_networks":{
                 "facebook":"#",
-                "twitter":"#",
-                "instagram":"#",
                 "youtube":"#"
             },
             "company":"PerfectCode",
@@ -71,8 +66,6 @@ const getContactStorage = () => {
             "avatar":"img/img5.jpg",
             "social_networks":{
                 "facebook":"#",
-                "twitter":"#",
-                "instagram":"#",
                 "youtube":"#"
             },
             "company":"PerfectCode",
@@ -86,9 +79,6 @@ const getContactStorage = () => {
             "city":"Ukraine, Lviv",
             "avatar":"img/img1.jpg",
             "social_networks":{
-                "facebook":"#",
-                "twitter":"#",
-                "instagram":"#",
                 "youtube":"#"
             },
             "company":"Logical",
@@ -128,9 +118,40 @@ const getContactStorage = () => {
             "isFavourite":false,
             "isContact":false
         }
-    ]
+    ];
+}
+
+const getProfile = () => {
+    return {
+        "id":8,
+        "name":"Justin Chung",
+        "city":"Ukraine, Lviv",
+        "avatar":"img/img6.jpeg",
+        "social_networks":{
+            "facebook":"#",
+            "twitter":"#",
+            "instagram":"#",
+            "youtube":"#"
+        },
+        "company":"HandyCode",
+        "position":"UI Designer",
+        "isFavourite":false,
+        "isContact":false
+    }
+}
+
+const getSetting = () => {
+    return {
+        "gridViewActive": "img/grid-view-active.png",
+        "gridViewInactive": "img/grid-view-inactive.png",
+        "listViewActive": "img/list-view-active.png",
+        "listViewInactive": "img/list-view-inactive.png",
+        "locationFilter": "img/location-filter.png"
+    }
 }
 
 export {
-    getContactStorage
+    getContactStorage,
+    getProfile,
+    getSetting
 }
