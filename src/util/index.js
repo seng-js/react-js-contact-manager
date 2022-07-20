@@ -27,7 +27,13 @@ const getSetting = () => {
     }
 }
 
+const getLocationsByData = (data) => {
+    let locations = data.map(item => item.city);
+    return Array.from(new Set(locations));
+}
+
 export {
     getProfile,
+    getLocationsByData,
     getSetting
 }

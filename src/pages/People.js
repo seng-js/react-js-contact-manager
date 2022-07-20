@@ -9,7 +9,7 @@ const People = (props) => {
             <div className="container">
                 <SideBar />
                 <div className="container-section">
-                    <SideHeader title="People" />
+                    <SideHeader title="People" data={props.data} />
                     <ContactItems data={props.data} />
                 </div>
             </div>

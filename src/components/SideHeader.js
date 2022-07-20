@@ -1,13 +1,17 @@
 import React from 'react'
 import './SideBar.css';
 import {Link} from "react-router-dom";
-import {getProfile, getSetting} from "../util";
+import {getLocationsByData, getProfile, getSetting} from "../util";
 
 const SideHeader = (props) => {
     const {title} = props;
     const profile = getProfile();
     const setting = getSetting();
 
+    const locations = props.data === undefined ? [] : getLocationsByData(props.data);
+    const renderLocationOptions = locations.map((location, key) => {
+        return <option value={location.toString()} key={key}>{location}</option>
+    });
     return (
         <>
             <div className="row">
@@ -32,8 +36,8 @@ const SideHeader = (props) => {
                 <div>
                     <img alt={setting.locationFilter} src={setting.locationFilter} />
                     <select id="location" className="location">
-                        <option>Ukraine, Lviv</option>
-                        <option>Cambodia, Phnom Penh</option>
+                        <option value="">Filter locations</option>
+                        {renderLocationOptions}
                     </select>
                 </div>
             </div>

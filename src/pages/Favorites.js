@@ -16,7 +16,7 @@ const Favorites = (props) => {
             <div className="container">
                 <SideBar />
                 <div className="container-section">
-                    <SideHeader title="Favorites" />
+                    <SideHeader title="Favorites" data={data} />
                     <ContactItems data={data} />
                 </div>
             </div>
