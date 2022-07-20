@@ -6,15 +6,11 @@ import People from "./pages/People";
 import Contacts from "./pages/Contacts";
 import Companies from "./pages/Companies";
 import {useEffect, useState} from "react";
-import {getData, updateData} from "./services";
+import {getData} from "./services";
 
 function App() {
 
     const [data, setData] = useState([]);
-
-    const handleUpdateData = async (type, action, index) => {
-        await updateData(type, action, index);
-    }
 
     const fetchData = () => {
         return getData().then((response) => setData(response.data));}
@@ -28,10 +24,10 @@ function App() {
           <BrowserRouter>
               <Routes>
                   <Route path="/" element={<Home />} />
-                  <Route path="/contacts" element={<Contacts handleUpdateData={handleUpdateData} data={data} />} />
-                  <Route path="/favorites" element={<Favorites handleUpdateData={handleUpdateData} data={data}  />} />
-                  <Route path="/people" element={<People handleUpdateData={handleUpdateData} data={data}  />} />
-                  <Route path="/companies" element={<Companies handleUpdateData={handleUpdateData} data={data}  />} />
+                  <Route path="/contacts" element={<Contacts data={data} />} />
+                  <Route path="/favorites" element={<Favorites data={data}  />} />
+                  <Route path="/people" element={<People data={data}  />} />
+                  <Route path="/companies" element={<Companies data={data}  />} />
               </Routes>
           </BrowserRouter>
       </>

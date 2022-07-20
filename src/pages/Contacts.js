@@ -11,9 +11,6 @@ const Contacts = (props) => {
         return item.isContact;
     })
 
-    const handleUpdateData = (type, action, index) => {
-        props.handleUpdateData(type, action, index);
-    }
 
     return (
         <div>
@@ -21,7 +18,7 @@ const Contacts = (props) => {
                 <SideBar/>
                 <div className="container-section">
                     <SideHeader title="Contacts"/>
-                    <ContactItems handleUpdateData={handleUpdateData} data={data}/>
+                    <ContactItems data={data}/>
                 </div>
             </div>
         </div>

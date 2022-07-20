@@ -10,9 +10,6 @@ const Favorites = (props) => {
         }
         return item.isFavourite;
     })
-    const handleUpdateData = (type, action, index) => {
-        props.handleUpdateData(type, action, index);
-    }
 
     return (
         <div>
@@ -20,7 +17,7 @@ const Favorites = (props) => {
                 <SideBar />
                 <div className="container-section">
                     <SideHeader title="Favorites" />
-                    <ContactItems handleUpdateData={handleUpdateData} data={data} />
+                    <ContactItems data={data} />
                 </div>
             </div>
         </div>

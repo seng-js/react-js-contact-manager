@@ -1,13 +1,10 @@
 import React from 'react'
 import './SideBar.css';
 import {Link} from "react-router-dom";
+import {updateData} from "../services";
 
 const ContactItems = (props) => {
-    
-    const handleUpdateData = (type, action, index) => {
-        props.handleUpdateData(type, action, index);
-    }
-    
+
     const items = props.data?.map( (item, key) => {
         const index = item.key === undefined ? key : item.key;
         return (
@@ -38,14 +35,14 @@ const ContactItems = (props) => {
                             <div className="job">{ item.city}</div>
                         </div>
                         {item.isContact ? (
-                            <button onClick={() => handleUpdateData('contact', 'delete', index)} className="btn btn-danger">Delete from contacts</button>
+                            <button onClick={() => updateData('contact', 'delete', index)} className="btn btn-danger">Delete from contacts</button>
                         ):(
-                            <button onClick={() => handleUpdateData('contact', 'add', index)} className="btn btn-success">Add to contacts</button>
+                            <button onClick={() => updateData('contact', 'add', index)} className="btn btn-success">Add to contacts</button>
                             )}
                         {item.isFavourite ? (
-                            <button onClick={() => handleUpdateData('favorite', 'delete', index)} className="btn btn-danger">Delete from favorites</button>
+                            <button onClick={() => updateData('favorite', 'delete', index)} className="btn btn-danger">Delete from favorites</button>
                         ):(
-                            <button onClick={() => handleUpdateData('favorite', 'add', index)} className="btn btn-success">Add to favorites</button>
+                            <button onClick={() => updateData('favorite', 'add', index)} className="btn btn-success">Add to favorites</button>
                         )}
                     </div>
                 </div>
