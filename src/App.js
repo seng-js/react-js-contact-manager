@@ -5,21 +5,19 @@ import Favorites from "./pages/Favorites";
 import People from "./pages/People";
 import Contacts from "./pages/Contacts";
 import Companies from "./pages/Companies";
-import axios from "axios";
-import {FIREBASE_URL_PEOPLE_JSON} from "./util";
 import {useEffect, useState} from "react";
+import {getData, updateData} from "./services";
 
 function App() {
 
     const [data, setData] = useState([]);
 
-    const handleUpdateData = (type, action, id) => {
-        console.log(type, action, id);
+    const handleUpdateData = async (type, action, id) => {
+        await updateData(id, action, type);
     }
 
     const fetchData = () => {
-        return axios.get(FIREBASE_URL_PEOPLE_JSON)
-            .then((response) => setData(response.data));}
+        return getData().then((response) => setData(response.data));}
 
     useEffect(() => {
         fetchData();

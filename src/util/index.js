@@ -1,7 +1,3 @@
-const FIREBASE_URL = 'https://contact-manager-f189f-default-rtdb.firebaseio.com/';
-const FIREBASE_URL_PEOPLE = FIREBASE_URL + 'people';
-const FIREBASE_URL_PEOPLE_JSON = FIREBASE_URL + 'people.json';
-
 const getProfile = () => {
     return {
         "id":8,
@@ -33,7 +29,5 @@ const getSetting = () => {
 
 export {
     getProfile,
-    FIREBASE_URL_PEOPLE_JSON,
-    FIREBASE_URL_PEOPLE,
     getSetting
 }

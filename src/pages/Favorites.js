@@ -4,7 +4,10 @@ import ContactItems from "../components/ContactItems";
 
 const Favorites = (props) => {
 
-    const data = props.data?.filter(function (item) {
+    const data = props.data?.filter(function (item, key) {
+        if (item.isFavourite) {
+            item.key = key;
+        }
         return item.isFavourite;
     })
     const handleUpdateData = (type, action, id) => {

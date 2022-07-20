@@ -9,6 +9,7 @@ const ContactItems = (props) => {
     }
     
     const items = props.data?.map( (item, key) => {
+        const index = item.key === undefined ? key : item.key;
         return (
                 <div className="card" key={key}>
                     <div className="content">
@@ -37,14 +38,14 @@ const ContactItems = (props) => {
                             <div className="job">{ item.city}</div>
                         </div>
                         {item.isContact ? (
-                            <button onClick={() => handleUpdateData('contact', 'delete', item.id)} className="btn btn-danger">Delete from contacts</button>
+                            <button onClick={() => handleUpdateData('contact', 'delete', index)} className="btn btn-danger">Delete from contacts</button>
                         ):(
-                            <button onClick={() => handleUpdateData('contact', 'add', item.id)} className="btn btn-success">Add to contacts</button>
+                            <button onClick={() => handleUpdateData('contact', 'add', index)} className="btn btn-success">Add to contacts</button>
                             )}
                         {item.isFavourite ? (
-                            <button onClick={() => handleUpdateData('favorite', 'delete', item.id)} className="btn btn-danger">Delete from favorites</button>
+                            <button onClick={() => handleUpdateData('favorite', 'delete', index)} className="btn btn-danger">Delete from favorites</button>
                         ):(
-                            <button onClick={() => handleUpdateData('favorite', 'add', item.id)} className="btn btn-success">Add to favorites</button>
+                            <button onClick={() => handleUpdateData('favorite', 'add', index)} className="btn btn-success">Add to favorites</button>
                         )}
                     </div>
                 </div>

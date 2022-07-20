@@ -4,7 +4,10 @@ import ContactItems from "../components/ContactItems";
 
 const Contacts = (props) => {
 
-    const data = props.data?.filter(function (item) {
+    const data = props.data?.filter(function (item, key) {
+        if (item.isContact) {
+            item.key = key;
+        }
         return item.isContact;
     })
 
