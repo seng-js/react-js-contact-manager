@@ -1,7 +1,7 @@
 import React from 'react'
 import {NavLink, useLocation} from "react-router-dom";
-import './SideBar.css';
 import {getProfile} from "../util";
+import './SideBar.css';
 
 const SideBar = () => {
     const location = useLocation();

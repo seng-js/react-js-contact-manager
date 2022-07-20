@@ -1,3 +1,7 @@
 .side-bar ul li.active {
     background: #127b8e;
 }
+
+.side-bar ul li.active a i {
+    color: #2eb4e5;
+}

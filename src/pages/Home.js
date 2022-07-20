@@ -4,13 +4,11 @@ import ContactItems from "../components/ContactItems";
 
 const Home = (props) => {
     return (
-        <div>
-            <div className="container">
-                <SideBar />
-                <div className="container-section">
-                    <SideHeader title="Home" />
-                    <ContactItems data={props.data} />
-                </div>
+        <div className="container">
+            <SideBar />
+            <div className="container-section">
+                <SideHeader title="Home" />
+                <ContactItems data={props.data} />
             </div>
         </div>
     );

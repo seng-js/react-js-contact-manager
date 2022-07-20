@@ -12,13 +12,11 @@ const Favorites = (props) => {
     })
 
     return (
-        <div>
-            <div className="container">
-                <SideBar />
-                <div className="container-section">
-                    <SideHeader title="Favorites" data={data} />
-                    <ContactItems data={data} />
-                </div>
+        <div className="container">
+            <SideBar />
+            <div className="container-section">
+                <SideHeader title="Favorites" data={data} />
+                <ContactItems data={data} />
             </div>
         </div>
     );

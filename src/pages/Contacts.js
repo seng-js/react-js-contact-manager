@@ -11,13 +11,11 @@ const Contacts = (props) => {
     })
 
     return (
-        <div>
-            <div className="container">
-                <SideBar/>
-                <div className="container-section">
-                    <SideHeader title="Contacts" data={data}/>
-                    <ContactItems data={data}/>
-                </div>
+        <div className="container">
+            <SideBar/>
+            <div className="container-section">
+                <SideHeader title="Contacts" data={data}/>
+                <ContactItems data={data}/>
             </div>
         </div>
     );
