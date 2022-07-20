@@ -8,7 +8,7 @@ const getData = () => {
     return axios.get(FIREBASE_URL_PEOPLE_JSON);
 }
 
-const updateData = async (id, action, type) => {
+const updateData = async (type, action, index) => {
     let data = {};
     if (type === 'favorite') {
         data = {isFavourite: action === 'add'}
@@ -16,7 +16,7 @@ const updateData = async (id, action, type) => {
         data = {isContact: action === 'add'}
     }
 
-    await axios.patch(FIREBASE_URL_PEOPLE + '/' + id + '.json', data)
+    await axios.patch(FIREBASE_URL_PEOPLE + '/' + index + '.json', data)
 }
 
 export {

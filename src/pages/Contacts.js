@@ -11,8 +11,8 @@ const Contacts = (props) => {
         return item.isContact;
     })
 
-    const handleUpdateData = (type, action, id) => {
-        props.handleUpdateData(type, action, id);
+    const handleUpdateData = (type, action, index) => {
+        props.handleUpdateData(type, action, index);
     }
 
     return (

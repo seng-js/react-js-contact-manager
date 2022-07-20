@@ -12,8 +12,8 @@ function App() {
 
     const [data, setData] = useState([]);
 
-    const handleUpdateData = async (type, action, id) => {
-        await updateData(id, action, type);
+    const handleUpdateData = async (type, action, index) => {
+        await updateData(type, action, index);
     }
 
     const fetchData = () => {

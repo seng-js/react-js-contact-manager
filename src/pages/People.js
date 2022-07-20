@@ -4,8 +4,8 @@ import ContactItems from "../components/ContactItems";
 
 const People = (props) => {
 
-    const handleUpdateData = (type, action, id) => {
-        props.handleUpdateData(type, action, id);
+    const handleUpdateData = (type, action, index) => {
+        props.handleUpdateData(type, action, index);
     }
 
     return (

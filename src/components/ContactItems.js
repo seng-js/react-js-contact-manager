@@ -4,8 +4,8 @@ import {Link} from "react-router-dom";
 
 const ContactItems = (props) => {
     
-    const handleUpdateData = (type, action, id) => {
-        props.handleUpdateData(type, action, id);
+    const handleUpdateData = (type, action, index) => {
+        props.handleUpdateData(type, action, index);
     }
     
     const items = props.data?.map( (item, key) => {
