@@ -1,8 +1,10 @@
 import SideBar from "../components/SideBar";
 import SideHeader from "../components/SideHeader";
 import ContactItems from "../components/ContactItems";
+import {useState} from "react";
 
 const Contacts = (props) => {
+    const [isGridView, setIsGridView] = useState(true);
     const data = props.data?.filter(function (item, key) {
         if (item.isContact) {
             item.key = key;
@@ -10,12 +12,15 @@ const Contacts = (props) => {
         return item.isContact;
     })
 
+    const switchView = (gridViewActive) => {
+        setIsGridView(gridViewActive);
+    };
     return (
         <div className="container">
-            <SideBar/>
+            <SideBar />
             <div className="container-section">
-                <SideHeader title="Contacts" data={data}/>
-                <ContactItems data={data}/>
+                <SideHeader title="Contacts" switchView={switchView} data={data}/>
+                <ContactItems data={data} isGridView={isGridView} />
             </div>
         </div>
     );

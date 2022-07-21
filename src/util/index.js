@@ -1,19 +1,19 @@
 const getProfile = () => {
     return {
-        "id":8,
-        "name":"Justin Chung",
-        "city":"Ukraine, Lviv",
-        "avatar":"img/img6.jpeg",
-        "social_networks":{
-            "facebook":"#",
-            "twitter":"#",
-            "instagram":"#",
-            "youtube":"#"
-        },
-        "company":"HandyCode",
-        "position":"UI Designer",
-        "isFavourite":false,
-        "isContact":false
+        "avatar": "img/img6.jpg",
+        "city": "Ukraine, Lviv",
+        "company": "Logical",
+        "id": 6,
+        "isContact": true,
+        "isFavourite": false,
+        "name": "Andrew Neil",
+        "position": "Web Designer",
+        "social_networks": {
+            "facebook": "#",
+            "instagram": "#",
+            "twitter": "#",
+            "youtube": "#"
+        }
     }
 }
 

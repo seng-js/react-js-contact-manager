@@ -320,37 +320,3 @@ a {
   padding-left: 10px;
 }
 
-.location {
-  margin-top: 20px;
-}
-
-select#location{
-  width: 148px;
-  padding: 5px;
-  font-size: 16px;
-  line-height: 1;
-  border: 0;
-  border-radius: 5px;
-  height: 34px;
-  background: url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat right #fff;
-  -webkit-appearance: none;
-  background-position-x: 130px;
-  outline: none;
-  color: #787878;
-}
-
-.filter-option > ul {
-  display: flex;
-  align-items: center;
-
-}
-
-.filter-option > ul > li {
-  margin-left: 0;
-  list-style-type: none;
-  margin-right: 20px;
-}
-
-.filter-option > ul > li > a > img {
-  padding-top: 15px;
-}
