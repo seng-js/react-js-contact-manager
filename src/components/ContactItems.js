@@ -1,15 +1,15 @@
 import React from 'react'
-import ContactGridViewItems from "./ContactGridViewItems";
-import ContactListViewItems from "./ContactListViewItems";
+import GridViewItems from "./GridViewItems";
+import ListViewItems from "./ListViewItems";
 
 const ContactItems = (props) => {
     const isGridView = props.isGridView === undefined ? true : props.isGridView;
     return (
         <>
             {isGridView ? (
-                <ContactGridViewItems data={props.data} />
+                <GridViewItems data={props.data} />
             ):(
-                <ContactListViewItems data={props.data} />
+                <ListViewItems data={props.data} />
             )}
         </>
     )
