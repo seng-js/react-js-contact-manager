@@ -46,7 +46,12 @@ select#location{
     margin-right: 20px;
 }
 
+.filter-option > ul > li:nth-child(1) {
+    margin-left: 0px;
+}
+
 .filter-option > ul > li:nth-child(3), .filter-option > ul > li:nth-child(2) {
+    cursor: pointer;
     margin-top: 15px;
 }
 
