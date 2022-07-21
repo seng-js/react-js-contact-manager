@@ -5,14 +5,22 @@
 .list-card > div {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+
     border: 1px solid #d8d8d8;
-    width: 600px;
+    width: 620px;
     height: 100%;
 }
 
 .list-card div.media-icons {
     margin-left: -5px;
+}
+
+.list-card .content img {
+    margin-right: 30px;
+}
+
+.list-card .content > div.details {
+    width: 200px;
 }
 
 .list-card .content > div.details > div {
@@ -30,7 +38,7 @@
     object-fit: cover;
 }
 
-.list-action > button {
+.list-card .content .list-action > button {
     display: flex;
 }
 

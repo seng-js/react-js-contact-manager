@@ -28,7 +28,7 @@
   width: 100%;
 }
 .main-card .cards .card {
-  width: calc(100% / 4 - 10px);
+  width: 240px;
   border: 1px solid #d8d8d8;
   background: #fff;
   padding: 18px;
@@ -66,10 +66,14 @@
   font-weight: 600;
 }
 
-.card .content .job{
+.card .content .job, .card .content .city {
   font-size: 14px;
   color: #b0afaf;
   margin-top: 5px;
+}
+
+.card .content .city {
+  margin-bottom: 10px;
 }
 
 .card .content .media-icons {
@@ -255,12 +259,12 @@ input[type="radio"]{
 }
 
 .btn {
-  font-size: 12px;
+  font-size: 11px;
   color: #2eb4e5;
   padding: 8px 16px;
   border: 1px solid #2eb4e5;
   border-radius: 16px;
-  margin: 10px;
+  margin: 6px;
   cursor: pointer;
   transition: all 0.3s ease;
   background: #fff;

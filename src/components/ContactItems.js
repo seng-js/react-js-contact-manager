@@ -1,5 +1,4 @@
 import React from 'react'
-import './SideBar.css';
 import ContactGridViewItems from "./ContactGridViewItems";
 import ContactListViewItems from "./ContactListViewItems";
 

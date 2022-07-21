@@ -1,8 +1,7 @@
 import React from 'react'
-import './SideBar.css';
 import './ContactListViewItems.css';
-import {Link} from "react-router-dom";
-import {updateData} from "../services";
+import SocialList from "./SocialList";
+import ActionList from "./ActionList";
 
 const ContactListViewItems = (props) => {
     const items = props.data?.map( (item, key) => {
@@ -17,33 +16,9 @@ const ContactListViewItems = (props) => {
                             <div className="name">{item.name}</div>
                             <div className="job">{item.company + ', ' + item.position}</div>
                             <div className="city">{item.city}</div>
-                            <div className="media-icons">
-                                {item.social_networks.facebook?.length > 0 && (
-                                    <Link to={item.social_networks.facebook}><i className="fa fa-facebook-f"></i></Link>
-                                )}
-                                {item.social_networks.twitter?.length > 0 && (
-                                    <Link to={item.social_networks.twitter}><i className="fa fa-twitter"></i></Link>
-                                )}
-                                {item.social_networks.instagram?.length > 0 && (
-                                    <Link to={item.social_networks.instagram}><i className="fa fa-instagram"></i></Link>
-                                )}
-                                {item.social_networks.youtube?.length > 0 && (
-                                    <Link to={item.social_networks.youtube}><i className="fa fa-youtube"></i></Link>
-                                )}
-                            </div>
+                            <SocialList data={item.social_networks} />
                         </div>
-                        <div className="list-action">
-                            {item.isContact ? (
-                                <button onClick={() => updateData('contact', 'delete', index)} className="btn btn-danger">Delete from contacts</button>
-                            ):(
-                                <button onClick={() => updateData('contact', 'add', index)} className="btn btn-success">Add to contacts</button>
-                            )}
-                            {item.isFavourite ? (
-                                <button onClick={() => updateData('favorite', 'delete', index)} className="btn btn-danger">Delete from favorites</button>
-                            ):(
-                                <button onClick={() => updateData('favorite', 'add', index)} className="btn btn-success">Add to favorites</button>
-                            )}
-                        </div>
+                        <ActionList item={item} index={index} />
                     </div>
                 </div>
             )
