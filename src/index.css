@@ -28,7 +28,7 @@
   width: 100%;
 }
 .main-card .cards .card {
-  width: 240px;
+  width: calc(100% / 4 - 10px);
   border: 1px solid #d8d8d8;
   background: #fff;
   padding: 18px;
@@ -43,6 +43,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  width: 280px;
 }
 
 .cards .card .content .img {
