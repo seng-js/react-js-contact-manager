@@ -2,15 +2,12 @@ import SideBar from "../components/SideBar";
 import SideHeader from "../components/SideHeader";
 import ContactItems from "../components/ContactItems";
 import {useState} from "react";
+import {useSelector} from "react-redux";
 
-const Favorites = (props) => {
+const Favorites = () => {
     const [isGridView, setIsGridView] = useState(true);
-    const data = props.data?.filter(function (item, key) {
-        if (item.isFavourite) {
-            item.key = key;
-        }
-        return item.isFavourite;
-    })
+    const state = useSelector(state => state);
+    const contacts = state.contacts.filter((contact) => contact.isFavourite);
 
     const switchView = (gridViewActive) => {
         setIsGridView(gridViewActive);
@@ -20,8 +17,8 @@ const Favorites = (props) => {
         <div className="container">
             <SideBar />
             <div className="container-section">
-                <SideHeader title="Favorites" switchView={switchView} data={data} />
-                <ContactItems isGridView={isGridView} data={data} />
+                <SideHeader title="Favorites" switchView={switchView} data={contacts} />
+                <ContactItems isGridView={isGridView} data={contacts} />
             </div>
         </div>
     );

@@ -5,7 +5,7 @@ import ActionList from "./ActionList";
 
 const ListViewItems = (props) => {
     const items = props.data?.map( (item, key) => {
-        const index = item.key === undefined ? key : item.key;
+        const index = item.index === undefined ? key : item.index;
         return (
                 <div className="list-card" key={key}>
                     <div className="content">

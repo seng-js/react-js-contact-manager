@@ -2,15 +2,12 @@ import SideBar from "../components/SideBar";
 import SideHeader from "../components/SideHeader";
 import ContactItems from "../components/ContactItems";
 import {useState} from "react";
+import {useSelector} from "react-redux";
 
-const Contacts = (props) => {
+const Contacts = () => {
     const [isGridView, setIsGridView] = useState(true);
-    const data = props.data?.filter(function (item, key) {
-        if (item.isContact) {
-            item.key = key;
-        }
-        return item.isContact;
-    })
+    const state = useSelector(state => state);
+    const contacts = state.contacts.filter((contact) => contact.isContact);
 
     const switchView = (gridViewActive) => {
         setIsGridView(gridViewActive);
@@ -19,8 +16,8 @@ const Contacts = (props) => {
         <div className="container">
             <SideBar />
             <div className="container-section">
-                <SideHeader title="Contacts" switchView={switchView} data={data}/>
-                <ContactItems data={data} isGridView={isGridView} />
+                <SideHeader title="Contacts" switchView={switchView} data={contacts}/>
+                <ContactItems data={contacts} isGridView={isGridView} />
             </div>
         </div>
     );

@@ -5,29 +5,27 @@ import Favorites from "./pages/Favorites";
 import People from "./pages/People";
 import Contacts from "./pages/Contacts";
 import Companies from "./pages/Companies";
-import {useEffect, useState} from "react";
-import {getData} from "./services";
+import {useEffect} from "react";
+import {getInitDataHandler} from "./services";
+import {useDispatch} from "react-redux";
 
 function App() {
 
-    const [data, setData] = useState([]);
-
-    const fetchData = () => {
-        return getData().then((response) => setData(response.data));}
+    const dispatch = useDispatch();
 
     useEffect(() => {
-        fetchData();
-    }, [data]);
+        getInitDataHandler(dispatch);
+    });
     
     return (
       <>
           <BrowserRouter>
               <Routes>
                   <Route path="/" element={<Home />} />
-                  <Route path="/contacts" element={<Contacts data={data} />} />
-                  <Route path="/favorites" element={<Favorites data={data}  />} />
-                  <Route path="/people" element={<People data={data}  />} />
-                  <Route path="/companies" element={<Companies data={data}  />} />
+                  <Route path="/contacts" element={<Contacts />} />
+                  <Route path="/favorites" element={<Favorites  />} />
+                  <Route path="/people" element={<People />} />
+                  <Route path="/companies" element={<Companies  />} />
               </Routes>
           </BrowserRouter>
       </>
