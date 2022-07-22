@@ -20,6 +20,9 @@ export const updateContactHandler = (type, action, index, dispatch) => {
         data = {'isFavourite': isAdd}
     } else if (type === 'contact') {
         data = {'isContact': isAdd}
+        if (isAdd === false) {
+            data = {'isContact': false, 'isFavourite': false}
+        }
     }
     axios.patch(FIREBASE_URL_PEOPLE + '/' + index + '.json', data).then(() => {
         dispatch(updateContact(index, data))

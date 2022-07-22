@@ -16,10 +16,11 @@ const ActionList = (props) => {
             ):(
                 <button onClick={() => updateData('contact', 'add')} className="btn btn-success">Add to contacts</button>
             )}
-            {item.isFavourite ? (
-                <button onClick={() => updateData('favorite', 'delete')} className="btn btn-danger">Delete from favorites</button>
-            ):(
+            {item.isContact === true && item.isFavourite === false && (
                 <button onClick={() => updateData('favorite', 'add')} className="btn btn-success">Add to favorites</button>
+            )}
+            {item.isFavourite === true && (
+                <button onClick={() => updateData('favorite', 'delete')} className="btn btn-danger">Delete from favorites</button>
             )}
         </div>
     )

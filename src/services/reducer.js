@@ -1,4 +1,4 @@
-import {GET_INIT_DATA, UPDATE_CONTACT} from "./actions";
+import {FILTER_BY_LOCATION, GET_INIT_DATA, UPDATE_CONTACT} from "./actions";
 
 const initialState = {
     contacts: []
@@ -20,6 +20,21 @@ const reducer = (state = initialState, action) => {
 
                 return contact;
             });
+            return {
+                ...state,
+                contacts: contacts
+            };
+        case FILTER_BY_LOCATION:
+            if (action.payload.location.length === 0) {
+                contacts = state.contacts;
+            } else {
+                contacts = state.contacts.filter(contact => {
+                    if (contact.city === action.payload.location) {
+                        return contact;
+                    }
+                });
+            }
+
             return {
                 ...state,
                 contacts: contacts

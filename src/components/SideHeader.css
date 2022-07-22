@@ -43,7 +43,15 @@ select#location{
 .filter-option > ul > li {
     list-style-type: none;
     margin-left: 20px;
-    margin-right: 20px;
+}
+
+.filter-option > ul > li > i {
+    font-size: 30px;
+    color: #808080;
+}
+
+.filter-option > ul > li > i.active {
+    color: #2eb4e5;
 }
 
 .filter-option > ul > li:nth-child(1) {
@@ -53,22 +61,6 @@ select#location{
 .filter-option > ul > li:nth-child(3), .filter-option > ul > li:nth-child(2) {
     cursor: pointer;
     margin-top: 15px;
-}
-
-.filter-option > ul > li.grid-view-active-true {
-    list-style-image: url('../../public/img/grid-view-active.png');
-}
-
-.filter-option > ul > li.grid-view-active-false {
-    list-style-image: url('../../public/img/grid-view-inactive.png');
-}
-
-.filter-option > ul > li.list-view-active-true {
-    list-style-image: url('../../public/img/list-view-active.png');
-}
-
-.filter-option > ul > li.list-view-active-false {
-    list-style-image: url('../../public/img/list-view-inactive.png');
 }
 
 .filter-option > ul > li.display-block {
