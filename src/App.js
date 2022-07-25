@@ -14,7 +14,9 @@ function App() {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        getInitDataHandler(dispatch);
+        getInitDataHandler(dispatch).catch(error => {
+            console.log(error);
+        });
     });
     
     return (

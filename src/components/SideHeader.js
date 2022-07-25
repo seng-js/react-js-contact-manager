@@ -14,9 +14,8 @@ const SideHeader = (props) => {
 
     const state = useSelector(state => state);
     const profile = getProfile();
-    const locations = props?.data === undefined ? [] : getLocationsByData(state?.tempContacts);
-    const renderLocationOptions = locations.map((location, key) => {
-        return <option selected={state.selectedFilterByLocation === location} value={location.toString()} key={key}>{location}</option>
+    const renderLocationOptions = getLocationsByData(state?.tempContacts).map((location, key) => {
+        return <option value={location.toString()} key={key}>{location}</option>
     });
 
     const switchView = (active) => {
@@ -48,7 +47,10 @@ const SideHeader = (props) => {
                 </div>
                 <div>
                     <img alt={locationFilter} src={locationFilter} />
-                    <select id="location" className="location" onChange={(event) => dispatch(getFilterData({filter_by_location: event.target.value}))} >
+                    <select id="location"
+                            value={state.selectedFilterByLocation}
+                            className="location"
+                            onChange={(event) => dispatch(getFilterData({filter_by_location: event.target.value}))} >
                         <option value="">Filter locations</option>
                         {renderLocationOptions}
                     </select>

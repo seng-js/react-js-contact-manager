@@ -1,7 +1,7 @@
 import SideBar from "../components/SideBar";
 import SideHeader from "../components/SideHeader";
 
-const Companies = (props) => {
+const Companies = () => {
 
     return (
         <div className="container">

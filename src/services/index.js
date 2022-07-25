@@ -10,6 +10,8 @@ export const getInitDataHandler = (dispatch) => {
     return axios.get(FIREBASE_URL_PEOPLE_JSON)
         .then((response) => {
             dispatch(getInitData(response.data))
+        }).catch((error) => {
+            console.log('Error: ' + error);
         });
 }
 
