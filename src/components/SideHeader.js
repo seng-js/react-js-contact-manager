@@ -28,7 +28,8 @@ const SideHeader = (props) => {
         <>
             <div className="row">
                 <div>
-                    <input type="search" id="search" value={state.selectedFilterByName} placeholder="Search..." onChange={(event) => dispatch(getFilterData({filter_by_name: event.target.value}))} />
+                    <input type="search" id="search" value={state.selectedFilterByName} placeholder="Search..."
+                           onChange={(event) => dispatch(getFilterData({filter_by_name: event.target.value, filter_by_location:state.selectedFilterByLocation}))} />
                 </div>
                 <div>
                     <Link className="nav-link nav-profile" to="#" data-bs-toggle="dropdown" aria-expanded="false">
@@ -50,7 +51,7 @@ const SideHeader = (props) => {
                     <select id="location"
                             value={state.selectedFilterByLocation}
                             className="location"
-                            onChange={(event) => dispatch(getFilterData({filter_by_location: event.target.value}))} >
+                            onChange={(event) => dispatch(getFilterData({filter_by_location: event.target.value, filter_by_name: state.selectedFilterByName}))} >
                         <option value="">Filter locations</option>
                         {renderLocationOptions}
                     </select>
