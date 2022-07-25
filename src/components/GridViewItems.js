@@ -5,7 +5,6 @@ import ActionList from "./ActionList";
 
 const GridViewItems = (props) => {
     const items = props.data?.map( (item, key) => {
-        const index = item.index === undefined ? key : item.index;
         return (
                 <div className="card" key={key}>
                     <div className="content">
@@ -20,7 +19,7 @@ const GridViewItems = (props) => {
                         <div className="details">
                             <div className="city">{ item.city}</div>
                         </div>
-                        <ActionList item={item} index={index} />
+                        <ActionList item={item} index={item.index} />
                     </div>
                 </div>
             )

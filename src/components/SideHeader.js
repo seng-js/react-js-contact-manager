@@ -3,22 +3,20 @@ import './SideHeader.css';
 import {Link} from "react-router-dom";
 import {getLocationsByData, getProfile, getSetting} from "../util";
 import {useDispatch, useSelector} from "react-redux";
-import {getDataFilterByLocation} from "../services/actions";
+import {getFilterData} from "../services/actions";
 
 const SideHeader = (props) => {
     const dispatch = useDispatch();
     const [gridViewActive, setGridViewActive] = useState('active');
     const [listViewActive, setListViewActive] = useState('')
     const {title} = props;
-    const profile = getProfile();
     const {locationFilter} = getSetting();
 
     const state = useSelector(state => state);
-    const contacts = state.contacts;
-
-    const locations = props?.data === undefined ? [] : getLocationsByData(contacts);
+    const profile = getProfile();
+    const locations = props?.data === undefined ? [] : getLocationsByData(state?.tempContacts);
     const renderLocationOptions = locations.map((location, key) => {
-        return <option value={location.toString()} key={key}>{location}</option>
+        return <option selected={state.selectedFilterByLocation === location} value={location.toString()} key={key}>{location}</option>
     });
 
     const switchView = (active) => {
@@ -31,7 +29,7 @@ const SideHeader = (props) => {
         <>
             <div className="row">
                 <div>
-                    <input type="text" id="search" placeholder="Search..." />
+                    <input type="search" id="search" value={state.selectedFilterByName} placeholder="Search..." onChange={(event) => dispatch(getFilterData({filter_by_name: event.target.value}))} />
                 </div>
                 <div>
                     <Link className="nav-link nav-profile" to="#" data-bs-toggle="dropdown" aria-expanded="false">
@@ -50,7 +48,7 @@ const SideHeader = (props) => {
                 </div>
                 <div>
                     <img alt={locationFilter} src={locationFilter} />
-                    <select id="location" className="location" onChange={(event) => dispatch(getDataFilterByLocation(event.target.value))} >
+                    <select id="location" className="location" onChange={(event) => dispatch(getFilterData({filter_by_location: event.target.value}))} >
                         <option value="">Filter locations</option>
                         {renderLocationOptions}
                     </select>

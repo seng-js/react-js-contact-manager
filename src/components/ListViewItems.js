@@ -5,7 +5,6 @@ import ActionList from "./ActionList";
 
 const ListViewItems = (props) => {
     const items = props.data?.map( (item, key) => {
-        const index = item.index === undefined ? key : item.index;
         return (
                 <div className="list-card" key={key}>
                     <div className="content">
@@ -18,7 +17,7 @@ const ListViewItems = (props) => {
                             <div className="city">{item.city}</div>
                             <SocialList data={item.social_networks} />
                         </div>
-                        <ActionList item={item} index={index} />
+                        <ActionList item={item} index={item.index} />
                     </div>
                 </div>
             )

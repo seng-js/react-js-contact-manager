@@ -5,9 +5,8 @@ import {updateContactHandler} from "../services";
 const ActionList = (props) => {
     const dispatch = useDispatch();
     const item = props.item;
-    const index = props.index;
     const updateData = (type, action) => {
-        updateContactHandler(type, action, index, dispatch);
+        updateContactHandler(type, action, props.index, dispatch);
     }
     return (
         <div className="list-action">

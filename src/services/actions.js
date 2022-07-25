@@ -1,7 +1,6 @@
 export const UPDATE_CONTACT = 'UPDATE_CONTACT';
 export const GET_INIT_DATA = 'GET_INIT_DATA';
-export const FILTER_BY_LOCATION = 'FILTER_BY_LOCATION';
-export const FILTER_BY_NAME = 'FILTER_BY_NAME';
+export const GET_FILTER_DATA = 'GET_FILTER_DATA';
 
 export const getInitData = (contacts) => {
     contacts.map((contact, index) => {
@@ -22,9 +21,9 @@ export const updateContact = (index, data) => {
     };
 };
 
-export const getDataFilterByLocation = (location) => {
+export const getFilterData = (payload) => {
     return {
-        type: FILTER_BY_LOCATION,
-        payload: {location: location}
+        type: GET_FILTER_DATA,
+        payload: payload
     };
 }
