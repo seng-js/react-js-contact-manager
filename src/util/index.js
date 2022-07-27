@@ -1,3 +1,21 @@
+const getDefaultData = () => {
+    return {
+        "avatar": "img/img1.jpg",
+        "city": "",
+        "company": "",
+        "isContact": false,
+        "isFavorite": false,
+        "name": "",
+        "position": "",
+        "social_networks": {
+            "facebook": "",
+            "instagram": "",
+            "twitter": "",
+            "youtube": ""
+        }
+    }
+}
+
 const getProfile = () => {
     return {
         "avatar": "img/img6.jpg",
@@ -5,7 +23,7 @@ const getProfile = () => {
         "company": "Logical",
         "id": 6,
         "isContact": true,
-        "isFavourite": false,
+        "isFavorite": false,
         "name": "Andrew Neil",
         "position": "Web Designer",
         "social_networks": {
@@ -61,7 +79,9 @@ const avatars =  [
     'img/img3.jpg',
     'img/img4.jpg',
     'img/img5.jpg',
-    'img/img6.jpg'
+    'img/img6.jpg',
+    'img/img7.jpg',
+    'img/img8.jpg'
 ];
 
 const listPosition = [
@@ -87,6 +107,7 @@ const getLocationsByData = (data) => {
 export {
     getProfile,
     getLocationsByData,
+    getDefaultData,
     menuItems,
     avatars,
     listPosition,

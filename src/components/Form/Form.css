@@ -1,3 +1,8 @@
+:root {
+    ---success-color: #2ecc71;
+    ---error-color: #e74c3c;
+}
+
 input[type=text], select {
     width: 100%;
     padding: 12px 20px;
@@ -44,8 +49,8 @@ input[type=submit]:hover {
 }
 
 .label_item img {
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     margin-right: 18px;
 }
@@ -75,16 +80,17 @@ input[type=text].social {
     left: 3px;
     top: calc(50% - 0.5em); /* Keep icon in center of input, regardless of the input height */
 }
-input{
+input[type=text], input[type=submit], select {
     width: 100%;
     padding: 12px 20px;
-    margin: 8px 0;
+    margin: 4px 0 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
     font-size: 14px;
 }
+
 .input-wrapper{
     position: relative;
 }
@@ -113,6 +119,80 @@ input{
     text-align: center;
     margin-bottom: 3px;
 }
+
+.form-control {
+    margin-bottom: 3px;
+    padding-bottom: 8px;
+    position: relative;
+}
+
+.form-control label {
+    color: #777;
+    display: block;
+    margin-bottom: 0;
+}
+
+.form-control label.checkbox {
+    display: inline;
+    margin-right: 10px;
+}
+
+.form-control input:focus {
+    outline: 0;
+    border-color: #777;
+}
+
+.form-control.success input {
+    border-color: var(---success-color);
+}
+
+.form-control.error input {
+    border-color: var(---error-color);
+}
+
+.form-control small {
+    border-color: var(---error-color);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+    color: #dc3545;
+}
+
+.form-control.error small {
+    visibility: visible;
+}
+
+::-webkit-input-placeholder {
+    text-transform: capitalize;
+}
+
+:-moz-placeholder {
+    text-transform: capitalize;
+}
+
+::-moz-placeholder {
+    text-transform: capitalize;
+}
+
+:-ms-input-placeholder {
+    text-transform: capitalize;
+}
+
+.profile {
+    display: block;
+    margin-bottom: 10px !important;
+}
+
+.list-card .modal-button {
+    border: none;
+    margin-left: 20px;
+}
+
+.card .modal-button {
+    border: none;
+}
+
 
 input[type=radio].with-font,
 input[type=checkbox].with-font {

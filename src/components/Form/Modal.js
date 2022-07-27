@@ -8,7 +8,7 @@ export const Modal = ({
                           modalRef,
                           buttonRef,
                           closeModal,
-                            index
+                          item
                       }) => {
     return ReactDOM.createPortal(
         <FocusTrap>
@@ -32,7 +32,7 @@ export const Modal = ({
                         <svg className="_modal-close-icon" viewBox="0 0 40 40"><path d="M 10,10 L 30,30 M 30,10 L 10,30" /></svg>
                     </button>
                     <div className="modal-body">
-                        <Form index={index}/>
+                        <Form item={item}/>
                     </div>
                 </div>
             </aside>

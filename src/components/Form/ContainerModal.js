@@ -52,7 +52,7 @@ export class ContainerModal extends Component {
                         closeModal={this.closeModal}
                         onKeyDown={this.onKeyDown}
                         onClickOutside={this.onClickOutside}
-                        index={this.props.index}
+                        item={this.props.item}
                     />
                 ) : null}
             </React.Fragment>

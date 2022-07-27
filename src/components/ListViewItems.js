@@ -2,12 +2,14 @@ import React from 'react'
 import './ListViewItems.css';
 import SocialList from "./SocialList";
 import ActionList from "./ActionList";
+import ContainerModal from "./Form/ContainerModal";
 
 const ListViewItems = (props) => {
     const items = props.data?.map( (item, key) => {
         return (
                 <div className="list-card" key={key}>
                     <div className="content">
+                        <ContainerModal isShowButton={true} item={item} triggerText="Edit people" />
                         <div className="img">
                             <img src={item.avatar} alt={item.avatar} />
                         </div>

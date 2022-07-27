@@ -5,21 +5,9 @@ export const GET_INIT_DATA = 'GET_INIT_DATA';
 export const GET_FILTER_DATA = 'GET_FILTER_DATA';
 
 export const getInitData = (contacts) => {
-    contacts.map((contact, index) => {
-        contact.index = index;
-        return contact;
-    });
-
     return {
         type: GET_INIT_DATA,
         payload: contacts,
-    };
-};
-
-export const patchContact = (index, data) => {
-    return {
-        type: PATCH_CONTACT,
-        payload: {index: index, data: data}
     };
 };
 
@@ -33,7 +21,7 @@ export const createContact = (data) => {
 export const updateContact = (index, data) => {
     return {
         type: UPDATE_CONTACT,
-        payload: {data: data}
+        payload: {index: index, data: data}
     };
 };
 

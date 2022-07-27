@@ -7,7 +7,7 @@ import {useSelector} from "react-redux";
 const Favorites = () => {
     const [isGridView, setIsGridView] = useState(true);
     const state = useSelector(state => state);
-    const contacts = state.contacts.filter((contact) => contact.isFavourite);
+    const contacts = state.contacts.filter((contact) => contact.isFavorite);
 
     const switchView = (gridViewActive) => {
         setIsGridView(gridViewActive);

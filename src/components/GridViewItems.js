@@ -8,7 +8,7 @@ const GridViewItems = (props) => {
     const items = props.data?.map( (item, key) => {
         return (
                 <div className="card" key={key}>
-                    <ContainerModal isShowButton={true} index={key} triggerText="Edit people" />
+                    <ContainerModal isShowButton={true} item={item} triggerText="Edit people" />
                     <div className="content">
                         <div className="img">
                             <img src={item.avatar} alt={item.avatar} />

@@ -5,14 +5,14 @@
     "company":"Logical",
     "id":1,
     "isContact":false,
-    "isFavourite":false,
+    "isFavorite":false,
     "name":"Jonathan Thomas",
     "position":"Web Designer",
     "social_networks":{
-      "facebook":"#",
-      "instagram":"#",
-      "twitter":"#",
-      "youtube":"#"
+      "facebook":"",
+      "instagram":"",
+      "twitter":"",
+      "youtube":""
     }
   },
   {
@@ -21,14 +21,14 @@
     "company":"Logical",
     "id":2,
     "isContact":false,
-    "isFavourite":false,
+    "isFavorite":false,
     "name":"Elizabeth Marks",
     "position":"UI Designer",
     "social_networks":{
-      "facebook":"#",
-      "instagram":"#",
-      "twitter":"#",
-      "youtube":"#"
+      "facebook":"",
+      "instagram":"",
+      "twitter":"",
+      "youtube":""
     }
   },
   {
@@ -37,14 +37,14 @@
     "company":"HandyCode",
     "id":3,
     "isContact":false,
-    "isFavourite":false,
+    "isFavorite":false,
     "name":"Carlos Moreno",
     "position":"UI Designer",
     "social_networks":{
-      "facebook":"#",
-      "instagram":"#",
-      "twitter":"#",
-      "youtube":"#"
+      "facebook":"",
+      "instagram":"",
+      "twitter":"",
+      "youtube":""
     }
   },
   {
@@ -53,14 +53,14 @@
     "company":"PerfectCode",
     "id":4,
     "isContact":false,
-    "isFavourite":false,
+    "isFavorite":false,
     "name":"Charles Tapia",
     "position":"Web Designer",
     "social_networks":{
-      "facebook":"#",
-      "instagram":"#",
-      "twitter":"#",
-      "youtube":"#"
+      "facebook":"",
+      "instagram":"",
+      "twitter":"",
+      "youtube":""
     }
   },
   {
@@ -69,14 +69,14 @@
     "company":"PerfectCode",
     "id":5,
     "isContact":false,
-    "isFavourite":false,
+    "isFavorite":false,
     "name":"Jennifer Warner",
     "position":"UI Designer",
     "social_networks":{
-      "facebook":"#",
-      "instagram":"#",
-      "twitter":"#",
-      "youtube":"#"
+      "facebook":"",
+      "instagram":"",
+      "twitter":"",
+      "youtube":""
     }
   },
   {
@@ -85,14 +85,14 @@
     "company":"Logical",
     "id":6,
     "isContact":false,
-    "isFavourite":false,
+    "isFavorite":false,
     "name":"Andrew Neil",
     "position":"Web Designer",
     "social_networks":{
-      "facebook":"#",
-      "instagram":"#",
-      "twitter":"#",
-      "youtube":"#"
+      "facebook":"",
+      "instagram":"",
+      "twitter":"",
+      "youtube":""
     }
   },
   {
@@ -101,14 +101,14 @@
     "company":"Logical",
     "id":7,
     "isContact":true,
-    "isFavourite":true,
+    "isFavorite":true,
     "name":"Amanda Jacobs",
     "position":"UI Designer",
     "social_networks":{
-      "facebook":"#",
-      "instagram":"#",
-      "twitter":"#",
-      "youtube":"#"
+      "facebook":"",
+      "instagram":"",
+      "twitter":"",
+      "youtube":""
     }
   },
   {
@@ -117,14 +117,14 @@
     "company":"HandyCode",
     "id":8,
     "isContact":false,
-    "isFavourite":true,
+    "isFavorite":true,
     "name":"Amber Estes",
     "position":"UI Designer",
     "social_networks":{
-      "facebook":"#",
-      "instagram":"#",
-      "twitter":"#",
-      "youtube":"#"
+      "facebook":"",
+      "instagram":"",
+      "twitter":"",
+      "youtube":""
     }
   }
 ]
