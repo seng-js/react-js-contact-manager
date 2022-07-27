@@ -36,8 +36,11 @@ export const updateContactHandler = (type, action, index, dispatch) => {
 
 export const saveContactHandler = (data, dispatch) => {
     if (data.index === undefined) {
-        axios.post(FIREBASE_URL_PEOPLE_JSON, data).then(() => {
-            dispatch(createContact(data))
+        axios.post(FIREBASE_URL_PEOPLE_JSON, data).then((response) => {
+            if (response.data != undefined) {
+                data.index = response.data.name;
+                dispatch(createContact(data))
+            }
         });
     } else {
         axios.patch(FIREBASE_URL_PEOPLE + '/' + data.index + '.json', data).then(() => {

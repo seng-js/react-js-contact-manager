@@ -15,7 +15,7 @@ function App() {
 
     useEffect(() => {
         getInitDataHandler(dispatch).catch(error => {
-            console.log(error);
+            console.log('Error loading data: ' + error);
         });
     });
     

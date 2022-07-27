@@ -10,8 +10,12 @@ export const Form = (props) => {
     const [actionLabel, setActionLabel] = useState('Create');
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
+    const closeModal = () => {
+        props.closeModal();
+    }
     const saveInfo = (data) => {
         saveContactHandler(data, dispatch);
+        closeModal();
     }
 
     const socialNetworks =  ['facebook',  'instagram', 'twitter', 'youtube'];
@@ -44,7 +48,7 @@ export const Form = (props) => {
     });
 
     useEffect(() => {
-        if (props.index !== undefined) {
+        if (props.item !== undefined) {
             setActionLabel('Update');
         }
         reset(props.item);
