@@ -70,3 +70,12 @@ select#location{
 .filter-option > ul > li > a > img {
     padding-top: 15px;
 }
+
+.add-people {
+    color: #2eb4e5;
+}
+
+.add-people i {
+    font-size: 30px;
+    color: #2eb4e5;
+}

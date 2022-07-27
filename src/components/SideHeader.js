@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 import {getLocationsByData, getProfile, getSetting} from "../util";
 import {useDispatch, useSelector} from "react-redux";
 import {getFilterData} from "../services/actions";
+import {ContainerModal} from "./Form/ContainerModal";
 
 const SideHeader = (props) => {
     const dispatch = useDispatch();
@@ -45,6 +46,9 @@ const SideHeader = (props) => {
                         <li onClick={() => switchView(true)}><i className={"fa fa-th-large " + gridViewActive}></i></li>
                         <li onClick={() => switchView(false)}><i className={"fa fa-bars " + listViewActive}></i></li>
                     </ul>
+                </div>
+                <div>
+                    {title === 'People' && (<ContainerModal isShowButton={true} triggerText="Add people" />)}
                 </div>
                 <div>
                     <img alt={locationFilter} src={locationFilter} />

@@ -1,6 +1,5 @@
 import axios from "axios";
-
-import { getInitData, updateContact } from "./actions";
+import {createContact, getInitData, patchContact, updateContact} from "./actions";
 
 const FIREBASE_URL = 'https://contact-manager-f189f-default-rtdb.firebaseio.com/';
 const FIREBASE_URL_PEOPLE = FIREBASE_URL + 'people';
@@ -9,7 +8,11 @@ const FIREBASE_URL_PEOPLE_JSON = FIREBASE_URL + 'people.json';
 export const getInitDataHandler = (dispatch) => {
     return axios.get(FIREBASE_URL_PEOPLE_JSON)
         .then((response) => {
-            dispatch(getInitData(response.data))
+            let contacts = [];
+            Object.entries(response.data).forEach(([index, value]) => {
+                contacts.push({ ...value, key: index });
+            });
+            dispatch(getInitData(contacts))
         }).catch((error) => {
             console.log('Error: ' + error);
         });
@@ -27,6 +30,12 @@ export const updateContactHandler = (type, action, index, dispatch) => {
         }
     }
     axios.patch(FIREBASE_URL_PEOPLE + '/' + index + '.json', data).then(() => {
-        dispatch(updateContact(index, data))
+        dispatch(patchContact(index, data))
+    });
+}
+
+export const saveContactHandler = (data, dispatch) => {
+    axios.post(FIREBASE_URL_PEOPLE_JSON, data).then(() => {
+        dispatch(createContact(data))
     });
 }

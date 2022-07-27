@@ -1,4 +1,4 @@
-import {GET_FILTER_DATA, GET_INIT_DATA, UPDATE_CONTACT} from "./actions"
+import {CREATE_CONTACT, GET_FILTER_DATA, GET_INIT_DATA, UPDATE_CONTACT} from "./actions"
 
 const initialState = {
     selectedFilterByName: '',
@@ -14,7 +14,14 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 contacts: payload,
-                tempContacts: payload};
+                tempContacts: payload
+            };
+        case CREATE_CONTACT:
+            state.contacts.push(payload.data);
+            return {
+                ...state,
+                contacts: state.contacts
+            };
         case UPDATE_CONTACT:
             contacts = state.contacts.map((contact) => {
                 if (contact.index === payload.index) {
