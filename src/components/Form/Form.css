@@ -35,7 +35,7 @@ input[type=submit]:hover {
 }
 
 .label_item {
-    opacity: 0.4;
+    opacity: 0.8;
     cursor: hand;
 }
 
@@ -45,7 +45,6 @@ input[type=submit]:hover {
 
 [type=radio]:checked + label img {
     border: 3px solid #2eb4e5;
-    opacity: 1;
 }
 
 .label_item img {
@@ -127,7 +126,7 @@ input[type=text], input[type=submit], select {
 }
 
 .form-control label {
-    color: #777;
+    color: #000;
     display: block;
     margin-bottom: 0;
 }

@@ -273,11 +273,16 @@ input[type="radio"]{
 
 .btn-success {
   color: #2eb4e5;
+  border-radius: 16px !important;
 }
 
 .btn-danger {
   color: #ff0000;
   border: 1px solid #ff0000;
+}
+
+.btn-cancel {
+  font-size: 14px;
 }
 
 .row {
