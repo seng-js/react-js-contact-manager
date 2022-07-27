@@ -1,5 +1,4 @@
 export const CREATE_CONTACT = 'CREATE_CONTACT';
-export const PATCH_CONTACT = 'PATCH_CONTACT';
 export const UPDATE_CONTACT = 'UPDATE_CONTACT';
 export const GET_INIT_DATA = 'GET_INIT_DATA';
 export const GET_FILTER_DATA = 'GET_FILTER_DATA';

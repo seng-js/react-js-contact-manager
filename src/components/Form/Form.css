@@ -142,11 +142,11 @@ input[type=text], input[type=submit], select {
     border-color: #777;
 }
 
-.form-control.success input {
+.form-control.success input, .form-control.success select {
     border-color: var(---success-color);
 }
 
-.form-control.error input {
+.form-control.error input, .form-control.error select {
     border-color: var(---error-color);
 }
 
@@ -208,7 +208,6 @@ input[type=checkbox].with-font {
 
 input[type=radio].with-font ~ label:before,
 input[type=checkbox].with-font ~ label:before {
-    font-family: FontAwesome;
     display: inline-block;
     content: "\f1db";
     letter-spacing: 10px;
@@ -260,4 +259,16 @@ input[type=checkbox].with-font:focus ~ label
 
 .avatar-container span {
     margin-bottom: 20px;
+}
+
+.action-button {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex: 1;
+    margin-top: 15px;
+}
+
+.action-button .btn {
+    text-transform: capitalize;
 }

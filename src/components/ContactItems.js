@@ -1,4 +1,3 @@
-import React from 'react'
 import GridViewItems from "./GridViewItems";
 import ListViewItems from "./ListViewItems";
 

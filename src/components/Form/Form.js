@@ -57,7 +57,7 @@ export const Form = (props) => {
     return (
         <div className="">
             <form action="" id="form" onSubmit={handleSubmit(saveInfo)} className="form-control">
-                <label class="profile" htmlFor="socialNetworks">Select Avata</label>
+                <label className="profile" htmlFor="socialNetworks">Select Avata</label>
                <div className="avatar-container">
                    {renderAvatars}
                </div>
@@ -115,8 +115,10 @@ export const Form = (props) => {
                 <div className="social-networks">
                     {renderSocialNetworks}
                 </div>
-                <input type="hidden" id="id" name="index" value={props.item?.index} />
-                <input type="submit" value={actionLabel} />
+                <div className="action-button">
+                    <input type="hidden" id="id" name="index" value={props.item?.index} />
+                    <input type="submit" className="btn-success" value={actionLabel} /><button className="btn" onClick={() => closeModal()}>Cancel</button>
+                </div>
             </form>
         </div>
     );

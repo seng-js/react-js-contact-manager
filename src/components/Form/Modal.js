@@ -13,7 +13,6 @@ export const Modal = ({
     return ReactDOM.createPortal(
         <FocusTrap>
             <aside
-                tag="aside"
                 role="dialog"
                 tabIndex="-1"
                 aria-modal="true"

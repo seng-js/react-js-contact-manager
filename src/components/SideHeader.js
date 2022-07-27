@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import {useState} from 'react'
 import './SideHeader.css';
 import {Link} from "react-router-dom";
 import {getLocationsByData, getProfile, getSetting} from "../util";

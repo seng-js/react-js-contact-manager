@@ -1,5 +1,3 @@
-import React from 'react'
-import './GridViewItems.css';
 import SocialList from "./SocialList";
 import ActionList from "./ActionList";
 import ContainerModal from "./Form/ContainerModal";

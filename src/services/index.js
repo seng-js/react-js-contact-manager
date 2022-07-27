@@ -47,5 +47,4 @@ export const saveContactHandler = (data, dispatch) => {
             dispatch(updateContact(data.index, data))
         });
     }
-
 }

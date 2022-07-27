@@ -1,21 +1,3 @@
-const getDefaultData = () => {
-    return {
-        "avatar": "img/img1.jpg",
-        "city": "",
-        "company": "",
-        "isContact": false,
-        "isFavorite": false,
-        "name": "",
-        "position": "",
-        "social_networks": {
-            "facebook": "",
-            "instagram": "",
-            "twitter": "",
-            "youtube": ""
-        }
-    }
-}
-
 const getProfile = () => {
     return {
         "avatar": "img/img6.jpg",
@@ -87,7 +69,14 @@ const avatars =  [
 const listPosition = [
     'Select Position',
     'Web Designer',
-    'UI Designer'
+    'UI Designer',
+    'Senior full stack engineer',
+    'Software engineer frontend',
+    'Senior Software Engineer',
+    'Software engineer backend',
+    'Android developer',
+    'Project coordinator',
+    'Mobile Software Engineer'
 ];
 
 const listCity = [
@@ -96,7 +85,8 @@ const listCity = [
     'Ukraine, Kharkiv',
     'Ukraine, Odessa',
     'Ukraine, Dnipro',
-    'Ukraine, Lviv'
+    'Ukraine, Lviv',
+    'Cambodia, Phnom Penh'
 ];
 
 const getLocationsByData = (data) => {
@@ -107,7 +97,6 @@ const getLocationsByData = (data) => {
 export {
     getProfile,
     getLocationsByData,
-    getDefaultData,
     menuItems,
     avatars,
     listPosition,
