@@ -8,13 +8,23 @@ import {ContainerModal} from "./Form/ContainerModal";
 
 const SideHeader = (props) => {
     const dispatch = useDispatch();
+    const [profile, setProfile] = useState(
+        {
+            avatar: '',
+            name: ''
+        }
+    );
     const [gridViewActive, setGridViewActive] = useState('active');
     const [listViewActive, setListViewActive] = useState('')
     const {title} = props;
     const {locationFilter} = getSetting();
 
     const state = useSelector(state => state);
-    const profile = getProfile();
+
+    setTimeout(() => {
+        setProfile(state?.contacts[0]);
+    });
+
     const renderLocationOptions = getLocationsByData(state?.tempContacts).map((location, key) => {
         return <option value={location.toString()} key={key}>{location}</option>
     });
@@ -34,8 +44,8 @@ const SideHeader = (props) => {
                 </div>
                 <div>
                     <Link className="nav-link nav-profile" to="#" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src={profile.avatar} alt={profile.avatar} className="rounded-circle" />
-                        <span className="login-name">{profile.name}</span>
+                        <img src={profile?.avatar} alt={profile?.avatar} className="rounded-circle" />
+                        <span className="login-name">{profile?.name}</span>
                     </Link>
                 </div>
             </div>
