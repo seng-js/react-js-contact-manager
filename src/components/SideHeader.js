@@ -22,7 +22,7 @@ const SideHeader = (props) => {
     const state = useSelector(state => state);
 
     setTimeout(() => {
-        setProfile(state?.contacts[0]);
+        setProfile(state?.tempContacts[0]);
     });
 
     const renderLocationOptions = getLocationsByData(state?.tempContacts).map((location, key) => {

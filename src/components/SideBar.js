@@ -23,7 +23,7 @@ const SideBar = () => {
     const state = useSelector(state => state);
 
     setTimeout(() => {
-        setProfile(state?.contacts[0]);
+        setProfile(state?.tempContacts[0]);
     });
 
     return (
