@@ -20,7 +20,8 @@ const reducer = (state = initialState, action) => {
             state.contacts.push(payload.data);
             return {
                 ...state,
-                contacts: state.contacts
+                contacts: state.contacts,
+                tempContacts: state.contacts
             };
         case UPDATE_CONTACT:
             contacts = state.contacts.map((contact) => {
