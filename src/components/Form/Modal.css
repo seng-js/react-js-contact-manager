@@ -9,6 +9,9 @@
     text-transform: capitalize;
 }
 
+.card .modal-button {
+    padding: 0;
+}
 .modal-button:focus {
     outline: 0;
     box-shadow: 0 0 4px currentColor;

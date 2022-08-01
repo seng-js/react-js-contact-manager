@@ -3,9 +3,6 @@ import TriggerButton from "./TriggerButton";
 import Modal from "./Modal";
 
 export class ContainerModal extends Component {
-    constructor(props) {
-        super(props)
-    }
     state = { isShown: false };
     showModal = () => {
         this.setState({ isShown: true }, () => {

@@ -1,13 +1,24 @@
 import SocialList from "./SocialList";
 import ActionList from "./ActionList";
+import './GridViewItems.css';
+import {useDispatch} from "react-redux";
 import ContainerModal from "./Form/ContainerModal";
+import {deleteDataHandler} from "../services";
 
 const GridViewItems = ({data = []}) => {
+    const { REACT_APP_CONTACT_ENABLE_DELETE } = process.env
+    const dispatch = useDispatch();
+    const deleteData = (index) => {
+        deleteDataHandler(index, dispatch);
+    }
     const items = data.map( (item, key) => {
         const {avatar, name, company, position, city, social_networks, index} = item;
         return (
                 <div className="card" key={key}>
                     <ContainerModal item={item} />
+                    {JSON.parse(REACT_APP_CONTACT_ENABLE_DELETE) && (
+                        <button onClick={() => deleteData(index)} className="btn btn-delete btn-lg center modal-button"><i className="fa fa-trash"></i></button>
+                    )}
                     <div className="content">
                         <div className="img">
                             <img src={avatar} alt={avatar} />

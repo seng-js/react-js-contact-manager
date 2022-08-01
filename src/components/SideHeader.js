@@ -49,8 +49,8 @@ const SideHeader = ({isGridView, switchView, title}) => {
                 <div className="filter-option">
                     <ul>
                         <li><h1 className="filter-label">{title}</h1></li>
-                        <li onClick={() => switchView(true)}><i className={`fa fa-th-large ${isGridView && 'active'}`}></i></li>
-                        <li onClick={() => switchView(false)}><i className={`fa fa-bars ${!isGridView && 'active'}`}></i></li>
+                        <li onClick={() => switchView(true)}><i className={`fa fa-th-large ${isGridView ? 'active' : ''}`}></i></li>
+                        <li onClick={() => switchView(false)}><i className={`fa fa-bars ${!isGridView ? 'active' : ''}`}></i></li>
                     </ul>
                 </div>
                 <div>

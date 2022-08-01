@@ -3,7 +3,7 @@ import './Form.css';
 import {useForm} from 'react-hook-form';
 import {saveContactHandler} from "../../services";
 import {useDispatch} from "react-redux";
-import {avatars, listCity, listPosition} from "../../util";
+import {avatars, listCity, listPosition} from "../../util/constants";
 
 export const Form = (props) => {
     const dispatch = useDispatch();
@@ -18,9 +18,9 @@ export const Form = (props) => {
         closeModal();
     }
 
-    const socialNetworks =  ['facebook',  'instagram', 'twitter', 'youtube'];
+    const socialNetworks = ['facebook',  'instagram', 'twitter', 'youtube'];
     const renderSocialNetworks = socialNetworks.map((socialNetwork, key) => {
-        return <input key={key} type="text"
+        return <input key={key + actionLabel + socialNetwork} type="text"
                       {...register(`social_networks.${socialNetwork}`)}
                       className="social"
                       placeholder={socialNetwork} />
@@ -29,7 +29,7 @@ export const Form = (props) => {
     const renderAvatars = avatars.map((avatarProfile, key) => {
         const defaultCheckedProfile = key === 0 && props.item === undefined;
         return <>
-            <input key={key} defaultChecked={defaultCheckedProfile}
+            <input key={key + actionLabel + avatarProfile} defaultChecked={defaultCheckedProfile}
                    type="radio" {...register('avatar')} className="radio_item" value={avatarProfile} id={key.toString()} />
                 <label className="label_item" htmlFor={key.toString()}><img alt={avatarProfile} src={avatarProfile} /></label>
         </>
@@ -37,13 +37,13 @@ export const Form = (props) => {
 
     const renderPositions = listPosition.map((position, key) => {
         return <>
-            <option key={key} value={position === 'Select Position' ? '' : position}>{position}</option>
+            <option key={key + actionLabel + position} value={position === 'Select Position' ? '' : position}>{position}</option>
         </>
     });
 
     const renderCities = listCity.map((city, key) => {
         return <>
-            <option key={key} value={city === 'Select City' ? '' : city} >{city}</option>
+            <option key={key + actionLabel + city} value={city === 'Select City' ? '' : city} >{city}</option>
         </>
     });
 

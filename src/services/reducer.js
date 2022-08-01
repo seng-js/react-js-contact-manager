@@ -1,8 +1,14 @@
-import {CREATE_CONTACT, GET_FILTER_DATA, GET_INIT_DATA, UPDATE_CONTACT} from "./actions"
-
 import {
     isFilterByLocation, isFilterByName, isValidInput
 } from "../util";
+
+const {
+    REACT_APP_CONTACT_CREATE,
+    REACT_APP_CONTACT_UPDATE,
+    REACT_APP_CONTACT_DELETE,
+    REACT_APP_CONTACT_GET_FILTER_DATA,
+    REACT_APP_CONTACT_GET_INIT_DATA
+} = process.env
 
 const initialState = {
     selectedFilterByName: '',
@@ -14,19 +20,19 @@ const reducer = (state = initialState, action) => {
     let contacts = [];
     let payload = action.payload;
     switch (action.type) {
-        case GET_INIT_DATA:
+        case REACT_APP_CONTACT_GET_INIT_DATA:
             return {
                 ...state,
                 contacts: payload,
                 tempContacts: payload
             };
-        case CREATE_CONTACT:
+        case REACT_APP_CONTACT_CREATE:
             return {
                 ...state,
                 contacts: [...state.contacts, payload.data],
                 tempContacts: state.contacts
             };
-        case UPDATE_CONTACT:
+        case REACT_APP_CONTACT_UPDATE:
             contacts = state.contacts.map((contact) => {
                 if (contact.index === payload.index) {
                     return {...contact, ...payload.data}
@@ -38,7 +44,13 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 contacts: contacts
             };
-        case GET_FILTER_DATA:
+        case REACT_APP_CONTACT_DELETE:
+            contacts = state.contacts.filter(contact => contact.index !== payload.index);
+            return {
+                ...state,
+                contacts: contacts
+            };
+        case REACT_APP_CONTACT_GET_FILTER_DATA:
             if (isValidInput(payload.filterByLocation) &&
                 isValidInput(payload.filterByName)) {
                 contacts = state.tempContacts.filter(contact => {

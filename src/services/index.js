@@ -1,12 +1,11 @@
 import axios from "axios";
-import {createContact, getInitData, updateContact} from "./actions";
+import {createContact, deleteContact, getInitData, updateContact} from "./actions";
 
-const FIREBASE_URL = 'https://contact-manager-f189f-default-rtdb.firebaseio.com/';
-const FIREBASE_URL_PEOPLE = FIREBASE_URL + 'people';
-const FIREBASE_URL_PEOPLE_JSON = FIREBASE_URL + 'people.json';
+const {REACT_APP_FIREBASE_URL} = process.env;
+const peopleUrl = REACT_APP_FIREBASE_URL + 'people';
 
 export const getInitDataHandler = (dispatch) => {
-    return axios.get(FIREBASE_URL_PEOPLE_JSON)
+    return axios.get(peopleUrl + '.json')
         .then((response) => {
             let contacts = [];
             Object.entries(response.data).forEach(([index, value]) => {
@@ -16,6 +15,12 @@ export const getInitDataHandler = (dispatch) => {
         }).catch((error) => {
             console.log('Error: ' + error);
         });
+}
+
+export const deleteDataHandler = (index, dispatch) => {
+    axios.delete(peopleUrl + '/' + index + '.json').then(() => {
+        dispatch(deleteContact(index))
+    });
 }
 
 export const updateContactHandler = (type, action, index, dispatch) => {
@@ -29,21 +34,21 @@ export const updateContactHandler = (type, action, index, dispatch) => {
             data = {'isContact': false, 'isFavorite': false}
         }
     }
-    axios.patch(FIREBASE_URL_PEOPLE + '/' + index + '.json', data).then(() => {
+    axios.patch(peopleUrl + '/' + index + '.json', data).then(() => {
         dispatch(updateContact(index, data))
     });
 }
 
 export const saveContactHandler = (data, dispatch) => {
     if (data.index === undefined) {
-        axios.post(FIREBASE_URL_PEOPLE_JSON, data).then((response) => {
+        axios.post(peopleUrl, data).then((response) => {
             if (response.data !== undefined) {
                 data.index = response.data.name;
                 dispatch(createContact(data))
             }
         });
     } else {
-        axios.patch(FIREBASE_URL_PEOPLE + '/' + data.index + '.json', data).then(() => {
+        axios.patch(peopleUrl + '/' + data.index + '.json', data).then(() => {
             dispatch(updateContact(data.index, data))
         });
     }
