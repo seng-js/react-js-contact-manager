@@ -1,5 +1,9 @@
 import {CREATE_CONTACT, GET_FILTER_DATA, GET_INIT_DATA, UPDATE_CONTACT} from "./actions"
 
+import {
+    isFilterByLocation, isFilterByName, isValidInput
+} from "../util";
+
 const initialState = {
     selectedFilterByName: '',
     selectedFilterByLocation: '',
@@ -17,56 +21,47 @@ const reducer = (state = initialState, action) => {
                 tempContacts: payload
             };
         case CREATE_CONTACT:
-            state.contacts.push(payload.data);
             return {
                 ...state,
-                contacts: state.contacts,
+                contacts: [...state.contacts, payload.data],
                 tempContacts: state.contacts
             };
         case UPDATE_CONTACT:
             contacts = state.contacts.map((contact) => {
                 if (contact.index === payload.index) {
-                    Object.assign(contact, payload.data)
+                    return {...contact, ...payload.data}
                 }
 
                 return contact;
             });
             return {
                 ...state,
-                contacts: contacts,
-                tempContacts: state.tempContacts
+                contacts: contacts
             };
         case GET_FILTER_DATA:
-            if (payload.filter_by_location !== undefined &&
-                payload.filter_by_location.length > 0 &&
-                payload.filter_by_name !== undefined &&
-                payload.filter_by_name.length > 0
-            ) {
+            if (isValidInput(payload.filterByLocation) &&
+                isValidInput(payload.filterByName)) {
                 contacts = state.tempContacts.filter(contact => {
-                    const fullSearchQuery = `${contact.name.toLowerCase()} ${contact.company.toLowerCase()} ${contact.position.toLowerCase()}`;
-                    return fullSearchQuery.toLowerCase().includes(payload.filter_by_name.toLowerCase()) &&
-                        contact.city.toLowerCase() === payload.filter_by_location.toLowerCase();
+                    return isFilterByName(payload.filterByName, contact) &&
+                        isFilterByLocation(payload.filterByLocation, contact);
                 });
-            } else if (payload.filter_by_location !== undefined
-                && payload.filter_by_location.length > 0) {
+            } else if (isValidInput(payload.filterByLocation)) {
                 contacts = state.tempContacts.filter(contact => {
-                    return contact.city.toLowerCase() === payload.filter_by_location.toLowerCase();
+                    return isFilterByLocation(payload.filterByLocation, contact);
                 });
-            } else if (payload.filter_by_name !== undefined
-                && payload.filter_by_name.length > 0) {
+            } else if (isValidInput(payload.filterByName)) {
                 contacts = state.tempContacts.filter(contact => {
-                    const fullSearchQuery = `${contact.name.toLowerCase()} ${contact.company.toLowerCase()} ${contact.position.toLowerCase()}`;
-                    return fullSearchQuery.toLowerCase().includes(payload.filter_by_name.toLowerCase());
+                    return isFilterByName(payload.filterByLocation, contact);
                 });
             } else {
                 contacts = state.tempContacts;
             }
             return {
                 ...state,
-                contacts: contacts,
+                contacts,
                 tempContacts: state.tempContacts,
-                selectedFilterByName: payload.filter_by_name,
-                selectedFilterByLocation: payload.filter_by_location
+                selectedFilterByName: payload.filterByName,
+                selectedFilterByLocation: payload.filterByLocation
             };
         default:
             return {

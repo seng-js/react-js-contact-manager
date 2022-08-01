@@ -1,25 +1,17 @@
-import SideBar from "../components/SideBar";
 import SideHeader from "../components/SideHeader";
 import ContactItems from "../components/ContactItems";
-import {useState} from "react";
 import {useSelector} from "react-redux";
+import {useToggleView} from "../hooks/useToggleView";
 
 const Favorites = () => {
-    const [isGridView, setIsGridView] = useState(true);
     const state = useSelector(state => state);
     const contacts = state.contacts.filter((contact) => contact.isFavorite);
-
-    const switchView = (gridViewActive) => {
-        setIsGridView(gridViewActive);
-    };
+    const [isGridView, switchView] = useToggleView();
 
     return (
-        <div className="container">
-            <SideBar />
-            <div className="container-section">
-                <SideHeader title="Favorites" switchView={switchView} data={contacts} />
-                <ContactItems isGridView={isGridView} data={contacts} />
-            </div>
+        <div className="container-section">
+            <SideHeader title="Favorites" isGridView={isGridView} switchView={switchView} data={contacts} />
+            <ContactItems isGridView={isGridView} data={contacts} />
         </div>
     );
 }

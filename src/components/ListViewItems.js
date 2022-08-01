@@ -4,22 +4,23 @@ import SocialList from "./SocialList";
 import ActionList from "./ActionList";
 import ContainerModal from "./Form/ContainerModal";
 
-const ListViewItems = (props) => {
-    const items = props.data?.map( (item, key) => {
+const ListViewItems = ({data = []}) => {
+    const items = data.map( (item, key) => {
+        const {avatar, name, company, position, city, social_networks, index} = item;
         return (
                 <div className="list-card" key={key}>
                     <div className="content">
-                        <ContainerModal isShowButton={true} item={item} triggerText="Edit people" />
+                        <ContainerModal item={item} />
                         <div className="img">
-                            <img src={item.avatar} alt={item.avatar} />
+                            <img src={avatar} alt={avatar} />
                         </div>
                         <div className="details">
-                            <div className="name">{item.name}</div>
-                            <div className="job">{item.company + ', ' + item.position}</div>
-                            <div className="city">{item.city}</div>
-                            <SocialList data={item.social_networks} />
+                            <div className="name">{name}</div>
+                            <div className="job">{company + ', ' + position}</div>
+                            <div className="city">{city}</div>
+                            <SocialList data={social_networks} />
                         </div>
-                        <ActionList item={item} index={item.index} />
+                        <ActionList item={item} index={index} />
                     </div>
                 </div>
             )

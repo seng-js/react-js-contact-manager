@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import FocusTrap from 'focus-trap-react';
 import Form from "./Form";
+import './Modal.css';
+
 export const Modal = ({
                           onClickOutside,
                           onKeyDown,

@@ -10,7 +10,7 @@ export const getInitDataHandler = (dispatch) => {
         .then((response) => {
             let contacts = [];
             Object.entries(response.data).forEach(([index, value]) => {
-                contacts.push({ ...value, index: index });
+                contacts.push({ ...value, index });
             });
             dispatch(getInitData(contacts))
         }).catch((error) => {
@@ -37,7 +37,7 @@ export const updateContactHandler = (type, action, index, dispatch) => {
 export const saveContactHandler = (data, dispatch) => {
     if (data.index === undefined) {
         axios.post(FIREBASE_URL_PEOPLE_JSON, data).then((response) => {
-            if (response.data != undefined) {
+            if (response.data !== undefined) {
                 data.index = response.data.name;
                 dispatch(createContact(data))
             }

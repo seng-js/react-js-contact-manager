@@ -5,9 +5,6 @@ import Modal from "./Modal";
 export class ContainerModal extends Component {
     constructor(props) {
         super(props)
-        this.state = {
-            isShowButton: props.isShowButton,
-        }
     }
     state = { isShown: false };
     showModal = () => {
@@ -37,13 +34,11 @@ export class ContainerModal extends Component {
     render() {
         return (
             <React.Fragment>
-                {this.state.isShowButton ? (
-                    <TriggerButton
-                        showModal={this.showModal}
-                        buttonRef={(n) => (this.TriggerButton = n)}
-                        triggerText={this.props.triggerText}
-                    />
-                ) : null}
+                <TriggerButton
+                    showModal={this.showModal}
+                    buttonRef={(n) => (this.TriggerButton = n)}
+                    triggerText={this.props.triggerText}
+                />
                 {this.state.isShown ? (
                     <Modal
                         onSubmit={this.props.onSubmit}

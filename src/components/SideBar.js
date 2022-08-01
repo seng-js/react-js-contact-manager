@@ -1,8 +1,8 @@
 import {NavLink, useLocation} from "react-router-dom";
-import {menuItems} from "../util";
 import './SideBar.css';
 import {useSelector} from "react-redux";
-import {useState} from "react";
+import {useEffect, useState} from "react";
+import {menuItems} from "../util/constants";
 
 const SideBar = () => {
     const [profile, setProfile] = useState(
@@ -16,15 +16,15 @@ const SideBar = () => {
 
     const location = useLocation();
     const { pathname } = location;
-    const renderMenuItems= menuItems.map((menu, key) => <li key={key} className={pathname === menu.link ? "active" : ""}>
-        <NavLink to={menu.link}><i className={menu.icon} aria-hidden="true"></i><span>{menu.name}</span></NavLink>
+    const renderMenuItems= menuItems.map(({link, icon, name}, key) => <li key={key} className={pathname === link ? "active" : ""}>
+        <NavLink to={link}><i className={icon} aria-hidden="true"></i><span>{name}</span></NavLink>
     </li>);
 
     const state = useSelector(state => state);
 
-    setTimeout(() => {
+    useEffect(() => {
         setProfile(state?.tempContacts[0]);
-    });
+    }, [state?.tempContacts])
 
     return (
         <>
