@@ -9,10 +9,10 @@
     "name":"Jonathan Thomas",
     "position":"Web Designer",
     "social_networks":{
-      "facebook":"",
-      "instagram":"",
-      "twitter":"",
-      "youtube":""
+      "facebook":"https://www.facebook.com/",
+      "instagram":"https://www.instagram.com/",
+      "twitter":"https://twitter.com/",
+      "youtube":"https://www.youtube.com/"
     }
   },
   {
@@ -25,10 +25,10 @@
     "name":"Elizabeth Marks",
     "position":"UI Designer",
     "social_networks":{
-      "facebook":"",
-      "instagram":"",
-      "twitter":"",
-      "youtube":""
+      "facebook":"https://www.facebook.com/",
+      "instagram":"https://www.instagram.com/",
+      "twitter":"https://twitter.com/",
+      "youtube":"https://www.youtube.com/"
     }
   },
   {
@@ -41,10 +41,10 @@
     "name":"Carlos Moreno",
     "position":"UI Designer",
     "social_networks":{
-      "facebook":"",
-      "instagram":"",
-      "twitter":"",
-      "youtube":""
+      "facebook":"https://www.facebook.com/",
+      "instagram":"https://www.instagram.com/",
+      "twitter":"https://twitter.com/",
+      "youtube":"https://www.youtube.com/"
     }
   },
   {
@@ -57,10 +57,10 @@
     "name":"Charles Tapia",
     "position":"Web Designer",
     "social_networks":{
-      "facebook":"",
-      "instagram":"",
-      "twitter":"",
-      "youtube":""
+      "facebook":"https://www.facebook.com/",
+      "instagram":"https://www.instagram.com/",
+      "twitter":"https://twitter.com/",
+      "youtube":"https://www.youtube.com/"
     }
   },
   {
@@ -73,10 +73,10 @@
     "name":"Jennifer Warner",
     "position":"UI Designer",
     "social_networks":{
-      "facebook":"",
-      "instagram":"",
-      "twitter":"",
-      "youtube":""
+      "facebook":"https://www.facebook.com/",
+      "instagram":"https://www.instagram.com/",
+      "twitter":"https://twitter.com/",
+      "youtube":"https://www.youtube.com/"
     }
   },
   {
@@ -89,10 +89,10 @@
     "name":"Andrew Neil",
     "position":"Web Designer",
     "social_networks":{
-      "facebook":"",
-      "instagram":"",
-      "twitter":"",
-      "youtube":""
+      "facebook":"https://www.facebook.com/",
+      "instagram":"https://www.instagram.com/",
+      "twitter":"https://twitter.com/",
+      "youtube":"https://www.youtube.com/"
     }
   },
   {
@@ -105,14 +105,14 @@
     "name":"Amanda Jacobs",
     "position":"UI Designer",
     "social_networks":{
-      "facebook":"",
-      "instagram":"",
-      "twitter":"",
-      "youtube":""
+      "facebook":"https://www.facebook.com/",
+      "instagram":"https://www.instagram.com/",
+      "twitter":"https://twitter.com/",
+      "youtube":"https://www.youtube.com/"
     }
   },
   {
-    "avatar":"img/img8.jpg",
+    "avatar":"img/img0.jpg",
     "city":"Ukraine, Lviv",
     "company":"HandyCode",
     "id":8,
@@ -121,10 +121,10 @@
     "name":"Amber Estes",
     "position":"UI Designer",
     "social_networks":{
-      "facebook":"",
-      "instagram":"",
-      "twitter":"",
-      "youtube":""
+      "facebook":"https://www.facebook.com/",
+      "instagram":"https://www.instagram.com/",
+      "twitter":"https://twitter.com/",
+      "youtube":"https://www.youtube.com/"
     }
   }
 ]
