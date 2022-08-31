@@ -1,26 +1,16 @@
-import {useEffect, useState} from 'react'
 import './SideHeader.css';
 import {Link} from "react-router-dom";
 import {getLocationsByData, getSetting} from "../util";
 import {useDispatch, useSelector} from "react-redux";
 import {getFilterData} from "../services/actions";
 import {ContainerModal} from "./Form/ContainerModal";
+import {useGetProfile} from "../hooks/useGetProfile";
 
 const SideHeader = ({isGridView, switchView, title}) => {
     const dispatch = useDispatch();
-    const [profile, setProfile] = useState(
-        {
-            avatar: '',
-            name: ''
-        }
-    );
+    const profile = useGetProfile();
     const {locationFilter} = getSetting();
-
     const state = useSelector(state => state);
-
-    useEffect(() => {
-        setProfile(state?.tempContacts[0]);
-    }, [state?.tempContacts])
 
     const renderLocationOptions = getLocationsByData(state?.tempContacts).map((location, key) => {
         return <option value={location.toString()} key={key}>{location}</option>

@@ -29,7 +29,7 @@ const GridViewItems = ({data = []}) => {
                         </div>
                         <SocialList data={social_networks} />
                         <div className="details">
-                            <div className="city">{ city}</div>
+                            <div className="city">{city}</div>
                         </div>
                         <ActionList item={item} index={index} />
                     </div>

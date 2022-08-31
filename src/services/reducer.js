@@ -1,6 +1,4 @@
-import {
-    isFilterByLocation, isFilterByName, isValidInput
-} from "../util";
+import {isFilterByLocation, isFilterByName, isValidInput} from "../util";
 
 const {
     REACT_APP_CONTACT_CREATE,
@@ -63,7 +61,7 @@ const reducer = (state = initialState, action) => {
                 });
             } else if (isValidInput(payload.filterByName)) {
                 contacts = state.tempContacts.filter(contact => {
-                    return isFilterByName(payload.filterByLocation, contact);
+                    return isFilterByName(payload.filterByName, contact);
                 });
             } else {
                 contacts = state.tempContacts;
